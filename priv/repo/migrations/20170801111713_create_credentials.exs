@@ -5,7 +5,7 @@ defmodule Rep.Repo.Migrations.CreateCredentials do
     create table(:credentials) do
       add :email, :string
       add :user_id, references(:users, on_delete: :delete_all),
-                    null:false
+                    null: false
 
       timestamps()
     end
