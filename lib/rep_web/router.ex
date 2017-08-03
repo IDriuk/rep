@@ -16,9 +16,16 @@ defmodule RepWeb.Router do
   scope "/", RepWeb do
     pipe_through :browser # Use the default browser stack
 
+    get "/", PageController, :index
     resources "/users", UserController
     resources "/sessions", SessionController, only: [:new, :create, :delete],
                                               singleton: true
+  end
+
+  scope "/cms", RepWeb.CMS, as: :cms do
+    pipe_through [:browser, :authenticate_user]
+
+    resources "/pages", PageController
   end
 
   defp authenticate_user(conn, _) do
