@@ -124,6 +124,15 @@ defmodule Rep.CMS do
     Page.changeset(page, %{})
   end
 
+  def inc_page_views(%Page{} = page) do
+    {1, [%Page{views: views}]} =
+      Repo.update_all(
+        from(p in Page, where: p.id == ^page.id),
+        [inc: [views: 1]], returning: [:views])
+
+    put_in(page.views, views)
+  end
+
   alias Rep.CMS.Author
 
   @doc """
