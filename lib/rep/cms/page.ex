@@ -1,13 +1,14 @@
 defmodule Rep.CMS.Page do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Rep.CMS.Page
+  alias Rep.CMS.{Page, Author}
 
 
   schema "pages" do
     field :body, :string
     field :title, :string
     field :views, :integer
+    belongs_to :author, Author
 
     timestamps()
   end
