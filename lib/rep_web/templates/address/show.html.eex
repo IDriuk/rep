@@ -1,0 +1,23 @@
+<h2>Show Address</h2>
+
+<ul>
+
+  <li>
+    <strong>Street:</strong>
+    <%= @address.street %>
+  </li>
+
+  <li>
+    <strong>House:</strong>
+    <%= @address.house %>
+  </li>
+
+  <li>
+    <strong>Entrance:</strong>
+    <%= @address.entrance %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: address_path(@conn, :edit, @address) %></span>
+<span><%= link "Back", to: address_path(@conn, :index) %></span>
