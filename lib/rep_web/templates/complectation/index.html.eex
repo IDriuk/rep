@@ -1,0 +1,34 @@
+<h2>Listing Complectations</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Station</th>
+      <th>Floors</th>
+      <th>Underfloor</th>
+      <th>Doors</th>
+      <th>Notes</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for complectation <- @complectations do %>
+    <tr>
+      <td><%= complectation.station %></td>
+      <td><%= complectation.floors %></td>
+      <td><%= complectation.underfloor %></td>
+      <td><%= complectation.doors %></td>
+      <td><%= complectation.notes %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: complectation_path(@conn, :show, complectation), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: complectation_path(@conn, :edit, complectation), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: complectation_path(@conn, :delete, complectation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Complectation", to: complectation_path(@conn, :new) %></span>

@@ -101,4 +101,196 @@ defmodule Rep.Lifts do
   def change_address(%Address{} = address) do
     Address.changeset(address, %{})
   end
+
+  alias Rep.Lifts.Complectation
+
+  @doc """
+  Returns the list of complectations.
+
+  ## Examples
+
+      iex> list_complectations()
+      [%Complectation{}, ...]
+
+  """
+  def list_complectations do
+    Repo.all(Complectation)
+  end
+
+  @doc """
+  Gets a single complectation.
+
+  Raises `Ecto.NoResultsError` if the Complectation does not exist.
+
+  ## Examples
+
+      iex> get_complectation!(123)
+      %Complectation{}
+
+      iex> get_complectation!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_complectation!(id), do: Repo.get!(Complectation, id)
+
+  @doc """
+  Creates a complectation.
+
+  ## Examples
+
+      iex> create_complectation(%{field: value})
+      {:ok, %Complectation{}}
+
+      iex> create_complectation(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_complectation(attrs \\ %{}) do
+    %Complectation{}
+    |> Complectation.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a complectation.
+
+  ## Examples
+
+      iex> update_complectation(complectation, %{field: new_value})
+      {:ok, %Complectation{}}
+
+      iex> update_complectation(complectation, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_complectation(%Complectation{} = complectation, attrs) do
+    complectation
+    |> Complectation.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Complectation.
+
+  ## Examples
+
+      iex> delete_complectation(complectation)
+      {:ok, %Complectation{}}
+
+      iex> delete_complectation(complectation)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_complectation(%Complectation{} = complectation) do
+    Repo.delete(complectation)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking complectation changes.
+
+  ## Examples
+
+      iex> change_complectation(complectation)
+      %Ecto.Changeset{source: %Complectation{}}
+
+  """
+  def change_complectation(%Complectation{} = complectation) do
+    Complectation.changeset(complectation, %{})
+  end
+
+  alias Rep.Lifts.Break
+
+  @doc """
+  Returns the list of breaks.
+
+  ## Examples
+
+      iex> list_breaks()
+      [%Break{}, ...]
+
+  """
+  def list_breaks do
+    Repo.all(Break)
+  end
+
+  @doc """
+  Gets a single break.
+
+  Raises `Ecto.NoResultsError` if the Break does not exist.
+
+  ## Examples
+
+      iex> get_break!(123)
+      %Break{}
+
+      iex> get_break!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_break!(id), do: Repo.get!(Break, id)
+
+  @doc """
+  Creates a break.
+
+  ## Examples
+
+      iex> create_break(%{field: value})
+      {:ok, %Break{}}
+
+      iex> create_break(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_break(attrs \\ %{}) do
+    %Break{}
+    |> Break.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a break.
+
+  ## Examples
+
+      iex> update_break(break, %{field: new_value})
+      {:ok, %Break{}}
+
+      iex> update_break(break, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_break(%Break{} = break, attrs) do
+    break
+    |> Break.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Break.
+
+  ## Examples
+
+      iex> delete_break(break)
+      {:ok, %Break{}}
+
+      iex> delete_break(break)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_break(%Break{} = break) do
+    Repo.delete(break)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking break changes.
+
+  ## Examples
+
+      iex> change_break(break)
+      %Ecto.Changeset{source: %Break{}}
+
+  """
+  def change_break(%Break{} = break) do
+    Break.changeset(break, %{})
+  end
 end

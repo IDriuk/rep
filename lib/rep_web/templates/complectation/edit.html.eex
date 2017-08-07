@@ -1,0 +1,5 @@
+<h2>Edit Complectation</h2>
+
+<%= render "form.html", Map.put(assigns, :action, complectation_path(@conn, :update, @complectation)) %>
+
+<span><%= link "Back", to: complectation_path(@conn, :index) %></span>

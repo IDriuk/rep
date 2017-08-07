@@ -1,0 +1,5 @@
+<h2>Edit Break</h2>
+
+<%= render "form.html", Map.put(assigns, :action, break_path(@conn, :update, @break)) %>
+
+<span><%= link "Back", to: break_path(@conn, :index) %></span>

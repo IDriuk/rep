@@ -8,6 +8,7 @@ defmodule Rep.Lifts.Address do
     field :entrance, :string
     field :house, :string
     field :street, :string
+    field :notes, :string
 
     timestamps()
   end

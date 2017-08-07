@@ -1,0 +1,23 @@
+defmodule Rep.Lifts.Break do
+  use Ecto.Schema
+  import Ecto.Changeset
+  alias Rep.Lifts.Break
+
+
+  schema "breaks" do
+    field :fixed, :boolean, default: false
+    field :notes, :string
+    field :served, :date
+    field :started, :boolean, default: false
+    field :stoped, :boolean, default: false
+
+    timestamps()
+  end
+
+  @doc false
+  def changeset(%Break{} = break, attrs) do
+    break
+    |> cast(attrs, [:served, :stoped, :started, :fixed])
+    |> validate_required([:served, :stoped, :started, :fixed])
+  end
+end

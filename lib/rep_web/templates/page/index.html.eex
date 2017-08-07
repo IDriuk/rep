@@ -8,6 +8,21 @@
     <h4>Resources</h4>
     <ul>
       <li>
+        <%= link "addresses", to: address_path(@conn, :index) %>
+      </li>
+      <li>
+        <%= link "breaks", to: break_path(@conn, :index) %>
+      </li>
+      <li>
+        <%= link "complectations", to: complectation_path(@conn, :index) %>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-lg-6">
+    <h4>Resources</h4>
+    <ul>
+      <li>
         <a href="http://phoenixframework.org/docs/overview">Guides</a>
       </li>
       <li>

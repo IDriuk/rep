@@ -6,6 +6,7 @@ defmodule Rep.Repo.Migrations.CreateAddresses do
       add :street, :string
       add :house, :string
       add :entrance, :string
+      add :notes, :string
 
       timestamps()
     end

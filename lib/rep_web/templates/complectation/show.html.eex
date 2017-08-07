@@ -1,0 +1,33 @@
+<h2>Show Complectation</h2>
+
+<ul>
+
+  <li>
+    <strong>Station:</strong>
+    <%= @complectation.station %>
+  </li>
+
+  <li>
+    <strong>Floors:</strong>
+    <%= @complectation.floors %>
+  </li>
+
+  <li>
+    <strong>Underfloor:</strong>
+    <%= @complectation.underfloor %>
+  </li>
+
+  <li>
+    <strong>Doors:</strong>
+    <%= @complectation.doors %>
+  </li>
+
+  <li>
+    <strong>Notes:</strong>
+    <%= @complectation.notes %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: complectation_path(@conn, :edit, @complectation) %></span>
+<span><%= link "Back", to: complectation_path(@conn, :index) %></span>

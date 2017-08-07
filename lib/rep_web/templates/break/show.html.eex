@@ -1,0 +1,33 @@
+<h2>Show Break</h2>
+
+<ul>
+
+  <li>
+    <strong>Served:</strong>
+    <%= @break.served %>
+  </li>
+
+  <li>
+    <strong>Stoped:</strong>
+    <%= @break.stoped %>
+  </li>
+
+  <li>
+    <strong>Started:</strong>
+    <%= @break.started %>
+  </li>
+
+  <li>
+    <strong>Fixed:</strong>
+    <%= @break.fixed %>
+  </li>
+
+  <li>
+    <strong>Notes:</strong>
+    <%= @break.notes %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: break_path(@conn, :edit, @break) %></span>
+<span><%= link "Back", to: break_path(@conn, :index) %></span>
