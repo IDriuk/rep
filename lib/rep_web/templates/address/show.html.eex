@@ -17,6 +17,11 @@
     <%= @address.entrance %>
   </li>
 
+  <li>
+    <strong>Notes:</strong>
+    <%= @address.notes %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: address_path(@conn, :edit, @address) %></span>

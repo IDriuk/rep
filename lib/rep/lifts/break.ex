@@ -17,7 +17,7 @@ defmodule Rep.Lifts.Break do
   @doc false
   def changeset(%Break{} = break, attrs) do
     break
-    |> cast(attrs, [:served, :stoped, :started, :fixed])
+    |> cast(attrs, [:served, :stoped, :started, :fixed, :notes])
     |> validate_required([:served, :stoped, :started, :fixed])
   end
 end

@@ -17,7 +17,7 @@ defmodule Rep.Lifts.Complectation do
   @doc false
   def changeset(%Complectation{} = complectation, attrs) do
     complectation
-    |> cast(attrs, [:station, :floors, :underfloor, :doors])
-    |> validate_required([:station, :floors, :underfloor, :doors])
+    |> cast(attrs, [:station, :floors, :underfloor, :doors, :notes])
+    |> validate_required([:station])
   end
 end

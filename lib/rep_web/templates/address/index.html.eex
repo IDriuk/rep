@@ -6,6 +6,7 @@
       <th>Street</th>
       <th>House</th>
       <th>Entrance</th>
+      <th>Notes</th>
 
       <th></th>
     </tr>
@@ -16,6 +17,7 @@
       <td><%= address.street %></td>
       <td><%= address.house %></td>
       <td><%= address.entrance %></td>
+      <td><%= address.notes %></td>
 
       <td class="text-right">
         <span><%= link "Show", to: address_path(@conn, :show, address), class: "btn btn-default btn-xs" %></span>

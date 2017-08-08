@@ -3,7 +3,6 @@ defmodule Rep.Lifts.Address do
   import Ecto.Changeset
   alias Rep.Lifts.Address
 
-
   schema "addresses" do
     field :entrance, :string
     field :house, :string
@@ -16,7 +15,7 @@ defmodule Rep.Lifts.Address do
   @doc false
   def changeset(%Address{} = address, attrs) do
     address
-    |> cast(attrs, [:street, :house, :entrance])
+    |> cast(attrs, [:street, :house, :entrance, :notes])
     |> validate_required([:street, :house, :entrance])
   end
 end
