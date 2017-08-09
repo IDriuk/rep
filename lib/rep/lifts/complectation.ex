@@ -21,5 +21,6 @@ defmodule Rep.Lifts.Complectation do
     complectation
     |> cast(attrs, [:station, :floors, :underfloor, :doors, :notes])
     |> validate_required([:station])
+    |> unique_constraint(:address_id)
   end
 end

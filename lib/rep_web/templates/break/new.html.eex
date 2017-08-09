@@ -1,5 +1,5 @@
 <h2>New Break</h2>
 
-<%= render "form.html", Map.put(assigns, :action, break_path(@conn, :create)) %>
+<%= render "form.html", Map.put(assigns, :action, address_break_path(@conn, :create, 0)) %>
 
-<span><%= link "Back", to: break_path(@conn, :index) %></span>
+<span><%= link "Back", to: address_break_path(@conn, :index, 0) %></span>

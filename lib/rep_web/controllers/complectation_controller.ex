@@ -19,7 +19,7 @@ defmodule RepWeb.ComplectationController do
       {:ok, complectation} ->
         conn
         |> put_flash(:info, "Complectation created successfully.")
-        |> redirect(to: complectation_path(conn, :show, complectation))
+        |> redirect(to: address_complectation_path(conn, :show, 0, complectation))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -43,7 +43,7 @@ defmodule RepWeb.ComplectationController do
       {:ok, complectation} ->
         conn
         |> put_flash(:info, "Complectation updated successfully.")
-        |> redirect(to: complectation_path(conn, :show, complectation))
+        |> redirect(to: address_complectation_path(conn, :show, 0, complectation))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", complectation: complectation, changeset: changeset)
     end
@@ -55,6 +55,6 @@ defmodule RepWeb.ComplectationController do
 
     conn
     |> put_flash(:info, "Complectation deleted successfully.")
-    |> redirect(to: complectation_path(conn, :index))
+    |> redirect(to: address_complectation_path(conn, :index, 0))
   end
 end

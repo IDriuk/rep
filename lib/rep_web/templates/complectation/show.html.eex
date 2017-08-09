@@ -29,5 +29,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: complectation_path(@conn, :edit, @complectation) %></span>
-<span><%= link "Back", to: complectation_path(@conn, :index) %></span>
+<span><%= link "Edit", to: address_complectation_path(@conn, :edit, 0, @complectation) %></span>
+<span><%= link "Back", to: address_complectation_path(@conn, :index, 0) %></span>

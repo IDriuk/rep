@@ -10,12 +10,6 @@
       <li>
         <%= link "addresses", to: address_path(@conn, :index) %>
       </li>
-      <li>
-        <%= link "breaks", to: break_path(@conn, :index) %>
-      </li>
-      <li>
-        <%= link "complectations", to: complectation_path(@conn, :index) %>
-      </li>
     </ul>
   </div>
 

@@ -29,5 +29,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: break_path(@conn, :edit, @break) %></span>
-<span><%= link "Back", to: break_path(@conn, :index) %></span>
+<span><%= link "Edit", to: address_break_path(@conn, :edit, 0, @break) %></span>
+<span><%= link "Back", to: address_break_path(@conn, :index, 0) %></span>
