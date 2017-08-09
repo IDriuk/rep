@@ -1,7 +1,7 @@
 defmodule Rep.Lifts.Complectation do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Rep.Lifts.Complectation
+  alias Rep.Lifts.{Complectation, Address}
 
 
   schema "complectations" do
@@ -10,6 +10,8 @@ defmodule Rep.Lifts.Complectation do
     field :notes, :string
     field :station, :string
     field :underfloor, :boolean, default: false
+
+    belongs_to :address, Address
 
     timestamps()
   end

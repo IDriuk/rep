@@ -1,7 +1,7 @@
 defmodule Rep.Lifts.Break do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Rep.Lifts.Break
+  alias Rep.Lifts.{Break, Address}
 
 
   schema "breaks" do
@@ -10,6 +10,8 @@ defmodule Rep.Lifts.Break do
     field :served, :date
     field :started, :boolean, default: false
     field :stoped, :boolean, default: false
+
+    belongs_to :address, Address
 
     timestamps()
   end
