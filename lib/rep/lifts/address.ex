@@ -1,13 +1,14 @@
 defmodule Rep.Lifts.Address do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Rep.Lifts.Address
+  alias Rep.Lifts.{Address, Mechanic}
 
   schema "addresses" do
     field :entrance, :string
     field :house, :string
     field :street, :string
     field :notes, :string
+    belongs_to :mechanic, Mechanic
 
     timestamps()
   end

@@ -20,6 +20,21 @@
   </div>
 
   <div class="col-lg-6">
+    <h4>Features</h4>
+    <ul>
+      <li>
+        <a href="#">breaks</a>
+      </li>
+      <li>
+        <a href="#">uncompletes</a>
+      </li>
+      <li>
+        <a href="#">stoped</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-lg-6">
     <h4>Resources</h4>
     <ul>
       <li>

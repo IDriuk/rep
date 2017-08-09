@@ -4,7 +4,8 @@ defmodule Rep.Repo.Migrations.CreateMechanics do
   def change do
     create table(:mechanics) do
       add :district, :string
-      add :user_id, references(:users, on_delete: :nothing)
+      add :user_id, references(:users, on_delete: :delete_all),
+                    null: false
 
       timestamps()
     end
