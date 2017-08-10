@@ -20,7 +20,12 @@ defmodule RepWeb.Router do
     resources "/users", UserController
     resources "/sessions", SessionController, only: [:new, :create, :delete],
                                               singleton: true
-    resources "/addresses", AddressController do
+  end
+
+  scope "/addresses", RepWeb do
+    pipe_through [:browser, :authenticate_user]
+
+    resources "/", AddressController do
       resources "/complectations", ComplectationController
       resources "/breaks", BreakController
     end

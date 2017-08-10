@@ -4,6 +4,8 @@ defmodule RepWeb.AddressController do
   alias Rep.Lifts
   alias Rep.Lifts.Address
 
+  plug :require_existing_mechanic
+
   def index(conn, _params) do
     addresses = Lifts.list_addresses()
     render(conn, "index.html", addresses: addresses)
@@ -15,7 +17,7 @@ defmodule RepWeb.AddressController do
   end
 
   def create(conn, %{"address" => address_params}) do
-    case Lifts.create_address(address_params) do
+    case Lifts.create_address(conn.assigns.current_mechanic, address_params) do
       {:ok, address} ->
         conn
         |> put_flash(:info, "Address created successfully.")
@@ -57,4 +59,10 @@ defmodule RepWeb.AddressController do
     |> put_flash(:info, "Address deleted successfully.")
     |> redirect(to: address_path(conn, :index))
   end
+
+  defp require_existing_mechanic(conn, _) do
+    mechanic = Lifts.ensure_mechanic_exists(conn.assigns.current_user)
+    assign(conn, :current_mechanic, mechanic)
+  end
+
 end

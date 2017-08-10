@@ -6,7 +6,8 @@ defmodule Rep.Lifts do
   import Ecto.Query, warn: false
   alias Rep.Repo
 
-  alias Rep.Lifts.Address
+  alias Rep.Lifts.{Address, Mechanic}
+  alias Rep.Accounts
 
   @doc """
   Returns the list of addresses.
@@ -49,9 +50,10 @@ defmodule Rep.Lifts do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_address(attrs \\ %{}) do
+  def create_address(%Mechanic{} = mechanic, attrs \\ %{}) do
     %Address{}
     |> Address.changeset(attrs)
+    |> Ecto.Changeset.put_change(:mechanic_id, mechanic.id)
     |> Repo.insert()
   end
 
@@ -388,5 +390,18 @@ defmodule Rep.Lifts do
   """
   def change_mechanic(%Mechanic{} = mechanic) do
     Mechanic.changeset(mechanic, %{})
+  end
+
+  def ensure_mechanic_exists(%Accounts.User{} = user) do
+    %Mechanic{user_id: user.id}
+    |> Ecto.Changeset.change()
+    |> Ecto.Changeset.unique_constraint(:user_id)
+    |> Repo.insert()
+    |> handle_existing_mechanic()
+  end
+
+  defp handle_existing_mechanic({:ok, mechanic}), do: mechanic
+  defp handle_existing_mechanic({:error, changeset}) do
+    Repo.get_by!(Mechanic, user_id: changeset.data.user_id)
   end
 end
