@@ -211,8 +211,9 @@ defmodule Rep.Lifts do
       [%Break{}, ...]
 
   """
-  def list_breaks do
-    Repo.all(Break)
+  def list_breaks address do
+    query = from b in Break, where: b.address_id == ^address.id
+    Repo.all(query)
   end
 
   @doc """
@@ -243,9 +244,10 @@ defmodule Rep.Lifts do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_break(attrs \\ %{}) do
+  def create_break(%Address{} = address, attrs \\ %{}) do
     %Break{}
     |> Break.changeset(attrs)
+    |> Ecto.Changeset.put_change(:address_id, address.id)
     |> Repo.insert()
   end
 

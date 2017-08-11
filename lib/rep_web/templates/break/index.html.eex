@@ -22,13 +22,13 @@
       <td><%= break.notes %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: address_break_path(@conn, :show, 0, break), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: address_break_path(@conn, :edit, 0, break), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: address_break_path(@conn, :delete, 0, break), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link "Show", to: address_break_path(@conn, :show, @address.id, break), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: address_break_path(@conn, :edit, @address.id, break), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: address_break_path(@conn, :delete, @address.id, break), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Break", to: address_break_path(@conn, :new, 0) %></span>
+<span><%= link "New Break", to: address_break_path(@conn, :new, @address.id) %></span>
