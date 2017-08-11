@@ -5,6 +5,25 @@ defmodule RepWeb.AddressController do
   alias Rep.Lifts.Address
 
   plug :require_existing_mechanic
+  plug :authorize_address when action in [:edit, :update, :delete]
+
+  defp require_existing_mechanic(conn, _) do
+    mechanic = Lifts.ensure_mechanic_exists(conn.assigns.current_user)
+    assign(conn, :current_mechanic, mechanic)
+  end
+
+  defp authorize_address(conn, _) do
+    address = Lifts.get_address!(conn.params["id"])
+
+    if conn.assigns.current_mechanic.id == address.mechanic_id do
+      assign(conn, :address, address)
+    else
+      conn
+      |> put_flash(:error, "You can't modify that address")
+      |> redirect(to: address_path(conn, :index))
+      |> halt()
+    end
+  end
 
   def index(conn, _params) do
     addresses = Lifts.list_addresses()
@@ -38,31 +57,23 @@ defmodule RepWeb.AddressController do
     render(conn, "edit.html", address: address, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "address" => address_params}) do
-    address = Lifts.get_address!(id)
-
-    case Lifts.update_address(address, address_params) do
+  def update(conn, %{"address" => address_params}) do
+    case Lifts.update_address(conn.assigns.address, address_params) do
       {:ok, address} ->
         conn
         |> put_flash(:info, "Address updated successfully.")
         |> redirect(to: address_path(conn, :show, address))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", address: address, changeset: changeset)
+        render(conn, "edit.html", changeset: changeset)
     end
   end
 
-  def delete(conn, %{"id" => id}) do
-    address = Lifts.get_address!(id)
-    {:ok, _address} = Lifts.delete_address(address)
+  def delete(conn, _) do
+    {:ok, _address} = Lifts.delete_address(conn.assigns.address)
 
     conn
     |> put_flash(:info, "Address deleted successfully.")
     |> redirect(to: address_path(conn, :index))
-  end
-
-  defp require_existing_mechanic(conn, _) do
-    mechanic = Lifts.ensure_mechanic_exists(conn.assigns.current_user)
-    assign(conn, :current_mechanic, mechanic)
   end
 
 end
