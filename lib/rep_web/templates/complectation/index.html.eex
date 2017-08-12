@@ -22,13 +22,13 @@
       <td><%= complectation.notes %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: address_complectation_path(@conn, :show, 0, complectation), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: address_complectation_path(@conn, :edit, 0, complectation), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: address_complectation_path(@conn, :delete, 0, complectation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link "Show", to: address_complectation_path(@conn, :show, @address.id, complectation), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: address_complectation_path(@conn, :edit, @address.id, complectation), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: address_complectation_path(@conn, :delete, @address.id, complectation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Complectation", to: address_complectation_path(@conn, :new, 0) %></span>
+<span><%= link "New Complectation", to: address_complectation_path(@conn, :new, @address) %></span>

@@ -115,8 +115,9 @@ defmodule Rep.Lifts do
       [%Complectation{}, ...]
 
   """
-  def list_complectations do
-    Repo.all(Complectation)
+  def list_complectations address do
+    query = from b in Complectation, where: b.address_id == ^address.id
+    Repo.all(query)
   end
 
   @doc """
@@ -147,9 +148,11 @@ defmodule Rep.Lifts do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_complectation(attrs \\ %{}) do
+  def create_complectation(%Address{} = address, attrs \\ %{}) do
     %Complectation{}
     |> Complectation.changeset(attrs)
+    |> Ecto.Changeset.put_change(:address_id, address.id)
+    |> Ecto.Changeset.unique_constraint(:address_id)
     |> Repo.insert()
   end
 

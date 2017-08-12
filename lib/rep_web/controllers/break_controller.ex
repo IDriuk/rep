@@ -24,7 +24,7 @@ defmodule RepWeb.BreakController do
         |> put_flash(:info, "Break created successfully.")
         |> redirect(to: address_break_path(conn, :show, address_id, break))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", address: address, changeset: changeset)
     end
   end
 
