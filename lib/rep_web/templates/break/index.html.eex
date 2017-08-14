@@ -15,16 +15,16 @@
   <tbody>
 <%= for break <- @breaks do %>
     <tr>
-      <td><%= break.served %></td>
-      <td><%= break.stoped %></td>
-      <td><%= break.started %></td>
-      <td><%= break.fixed %></td>
+      <td><%= to_date break.served %></td>
+      <td><%= if break.stoped, do: "✓", else: "-" %></td>
+      <td><%= if break.started, do: "✓", else: "-" %></td>
+      <td><%= if break.fixed, do: "✓", else: "-" %></td>
       <td><%= break.notes %></td>
 
-      <td class="text-right">
-        <span><%= link "Show", to: address_break_path(@conn, :show, @address.id, break), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: address_break_path(@conn, :edit, @address.id, break), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: address_break_path(@conn, :delete, @address.id, break), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      <td class="text-right" width="100px">
+        <span><%= link " ", to: address_break_path(@conn, :show, @address.id, break), class: "btn btn-default btn-xs glyphicon glyphicon-eye-open" %></span>
+        <span><%= link "", to: address_break_path(@conn, :edit, @address.id, break), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
+        <span><%= link " ", to: address_break_path(@conn, :delete, @address.id, break), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
       </td>
     </tr>
 <% end %>
