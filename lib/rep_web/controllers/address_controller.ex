@@ -26,7 +26,7 @@ defmodule RepWeb.AddressController do
   end
 
   def index(conn, _params) do
-    addresses = Lifts.list_addresses()
+    addresses = Lifts.list_addresses(conn.assigns.current_mechanic)
     render(conn, "index.html", addresses: addresses)
   end
 

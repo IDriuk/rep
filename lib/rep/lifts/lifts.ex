@@ -18,8 +18,9 @@ defmodule Rep.Lifts do
       [%Address{}, ...]
 
   """
-  def list_addresses do
-    Repo.all(Address)
+  def list_addresses (%Mechanic{} = mechanic) do
+    query = from a in Address, where: a.mechanic_id == ^mechanic.id
+    Repo.all(query)
   end
 
   @doc """
