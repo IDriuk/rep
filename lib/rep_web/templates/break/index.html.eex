@@ -1,4 +1,5 @@
 <h2>Listing Breaks</h2>
+<h3> <%= get_short_address @address %> </h3>
 
 <table class="table">
   <thead>

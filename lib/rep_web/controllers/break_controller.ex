@@ -5,11 +5,13 @@ defmodule RepWeb.BreakController do
   alias Rep.Lifts.Break
 
   def stops(conn, _params) do
-    render(conn, "stops.html")
+    breaks = Lifts.list_breaks(:stops)
+    render(conn, "stops.html", breaks: breaks)
   end
 
   def incomplete(conn, _params) do
-    render(conn, "incomplete.html")
+    breaks = Lifts.list_breaks(:incomplete)
+    render(conn, "incomplete.html", breaks: breaks)
   end
 
   def index(conn, %{"address_id" => address_id}) do

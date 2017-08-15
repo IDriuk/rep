@@ -19,6 +19,8 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <li><%= link "Addresses", to: address_path(@conn, :index) %></li>
+            <li><%= link "Stops", to: break_path(@conn, :stops) %></li>
+            <li><%= link "Incomplete", to: break_path(@conn, :incomplete) %></li>
             <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
           </ul>
         </nav>

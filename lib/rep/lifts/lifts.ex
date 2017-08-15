@@ -217,8 +217,24 @@ defmodule Rep.Lifts do
       [%Break{}, ...]
 
   """
+  def list_breaks :stops do
+    query = from b in Break,
+            where: b.stoped == :true,
+            order_by: [desc: b.served]
+    Repo.all(query) |> Repo.preload(:address)
+  end
+
+  def list_breaks :incomplete do
+    query = from b in Break,
+            where: b.stoped == :false,
+            order_by: [desc: b.served]
+    Repo.all(query) |> Repo.preload(:address)
+  end
+
   def list_breaks address do
-    query = from b in Break, where: b.address_id == ^address.id
+    query = from b in Break,
+            where: b.address_id == ^address.id,
+            order_by: [desc: b.served]
     Repo.all(query)
   end
 

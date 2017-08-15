@@ -6,21 +6,6 @@
 <div class="row marketing">
 
   <div class="col-lg-6">
-    <h4>Features</h4>
-    <ul>
-      <li>
-        <%= link "addresses", to: address_path(@conn, :index) %>
-      </li>
-      <li>
-        <%= link "stops", to: break_path(@conn, :stops) %>
-      </li>
-      <li>
-        <%= link "incomplete", to: break_path(@conn, :incomplete) %>
-      </li>
-    </ul>
-  </div>
-
-  <div class="col-lg-6">
     <h4>Resources</h4>
     <ul>
       <li>

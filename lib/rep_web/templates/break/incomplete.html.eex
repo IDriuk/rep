@@ -1,1 +1,30 @@
-incomplete
+<h2>Listing Breaks</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Served</th>
+      <th>Address</th>
+      <th>Fixed</th>
+      <th>Notes</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for break <- @breaks do %>
+    <tr>
+      <td><%= to_date break.served %></td>
+      <td><%= get_short_address break.address %></td>
+      <td><%= if break.fixed, do: "✓", else: "-" %></td>
+      <td><%= break.notes %></td>
+
+      <td class="text-right" width="100px">
+        <span><%= link " ", to: address_break_path(@conn, :show, break.address.id, break), class: "btn btn-default btn-xs glyphicon glyphicon-eye-open" %></span>
+        <span><%= link "", to: address_break_path(@conn, :edit, break.address.id, break), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
+        <span><%= link " ", to: address_break_path(@conn, :delete, break.address.id, break), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
