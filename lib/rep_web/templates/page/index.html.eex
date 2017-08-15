@@ -4,26 +4,18 @@
 </div>
 
 <div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <%= link "addresses", to: address_path(@conn, :index) %>
-      </li>
-    </ul>
-  </div>
 
   <div class="col-lg-6">
     <h4>Features</h4>
     <ul>
       <li>
-        <a href="#">breaks</a>
+        <%= link "addresses", to: address_path(@conn, :index) %>
       </li>
       <li>
-        <a href="#">uncompletes</a>
+        <%= link "stops", to: break_path(@conn, :stops) %>
       </li>
       <li>
-        <a href="#">stoped</a>
+        <%= link "incomplete", to: break_path(@conn, :incomplete) %>
       </li>
     </ul>
   </div>

@@ -19,7 +19,9 @@ defmodule Rep.Lifts do
 
   """
   def list_addresses (%Mechanic{} = mechanic) do
-    query = from a in Address, where: a.mechanic_id == ^mechanic.id
+    query = from a in Address,
+            where: a.mechanic_id == ^mechanic.id,
+            order_by: [a.street, a.house, a.entrance]
     Repo.all(query)
   end
 

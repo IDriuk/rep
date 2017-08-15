@@ -25,10 +25,14 @@ defmodule RepWeb.Router do
   scope "/addresses", RepWeb do
     pipe_through [:browser, :authenticate_user]
 
+    get "/stops", BreakController, :stops
+    get "/incomplete", BreakController, :incomplete
+
     resources "/", AddressController do
       resources "/complectations", ComplectationController
       resources "/breaks", BreakController
     end
+
   end
 
   scope "/cms", RepWeb.CMS, as: :cms do
