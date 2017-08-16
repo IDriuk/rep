@@ -21,6 +21,7 @@
             <li><%= link "Addresses", to: address_path(@conn, :index) %></li>
             <li><%= link "Stops", to: break_path(@conn, :stops) %></li>
             <li><%= link "Incomplete", to: break_path(@conn, :incomplete) %></li>
+            <li><%= link "Login", to: session_path(@conn, :new) %></li>
           </ul>
         </nav>
       </header>

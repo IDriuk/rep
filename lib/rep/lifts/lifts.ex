@@ -217,15 +217,19 @@ defmodule Rep.Lifts do
       [%Break{}, ...]
 
   """
-  def list_breaks :stops do
+  def list_breaks(:stops, %Mechanic{} = mechanic) do
     query = from b in Break,
+            inner_join: a in assoc(b, :address),
+            where: a.mechanic_id == ^mechanic.id,
             where: b.stoped == :true,
             order_by: [desc: b.served]
     Repo.all(query) |> Repo.preload(:address)
   end
 
-  def list_breaks :incomplete do
+  def list_breaks(:incomplete, %Mechanic{} = mechanic) do
     query = from b in Break,
+            inner_join: a in assoc(b, :address),
+            where: a.mechanic_id == ^mechanic.id,
             where: b.stoped == :false,
             order_by: [desc: b.served]
     Repo.all(query) |> Repo.preload(:address)

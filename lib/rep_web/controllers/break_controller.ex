@@ -4,13 +4,36 @@ defmodule RepWeb.BreakController do
   alias Rep.Lifts
   alias Rep.Lifts.Break
 
+  plug :require_existing_mechanic
+  plug :authorize_break when action in [:edit, :update, :delete]
+
+  defp require_existing_mechanic(conn, _) do
+    mechanic = Lifts.ensure_mechanic_exists(conn.assigns.current_user)
+    assign(conn, :current_mechanic, mechanic)
+  end
+
+  defp authorize_break(conn, _) do
+    address = Lifts.get_address!(conn.params["address_id"])
+    break = Lifts.get_break!(conn.params["id"])
+
+    if conn.assigns.current_mechanic.id == address.mechanic_id do
+      assign(conn, :address, address)
+      assign(conn, :break, break)
+    else
+      conn
+      |> put_flash(:error, "You can't modify that break")
+      |> redirect(to: address_path(conn, :index))
+      |> halt()
+    end
+  end
+
   def stops(conn, _params) do
-    breaks = Lifts.list_breaks(:stops)
+    breaks = Lifts.list_breaks(:stops, conn.assigns.current_mechanic)
     render(conn, "stops.html", breaks: breaks)
   end
 
   def incomplete(conn, _params) do
-    breaks = Lifts.list_breaks(:incomplete)
+    breaks = Lifts.list_breaks(:incomplete, conn.assigns.current_mechanic)
     render(conn, "incomplete.html", breaks: breaks)
   end
 
