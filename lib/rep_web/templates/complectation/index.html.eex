@@ -1,4 +1,5 @@
 <h2>Listing Complectations</h2>
+<h3> <%= link get_short_address(@address), to: address_path(@conn, :show, @address) %></h3>
 
 <table class="table">
   <thead>

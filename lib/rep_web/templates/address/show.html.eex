@@ -24,9 +24,7 @@
 
 </ul>
 
+<span><%= link "Edit", to: address_path(@conn, :edit, @address) %></span><br></br>
 
-<span><%= link "breaks", to: address_break_path(@conn, :index, @address.id) %></span>
-<span><%= link "complectation", to: address_complectation_path(@conn, :index, @address.id) %></span></br>
-
-<span><%= link "Edit", to: address_path(@conn, :edit, @address) %></span>
-<span><%= link "Back", to: address_path(@conn, :index) %></span>
+<span><%= link "breaks", to: address_break_path(@conn, :index, @address.id) %></span></br>
+<span><%= link "complectation", to: address_complectation_path(@conn, :index, @address.id) %></span>

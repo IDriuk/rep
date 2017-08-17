@@ -17,7 +17,7 @@
 <%= for break <- @breaks do %>
     <tr>
       <td><%= to_date break.served %></td>
-      <td><%= get_short_address break.address %></td>
+      <td><%= link get_short_address(break.address), to: address_path(@conn, :show, break.address) %></td>
       <td><%= if break.stoped, do: "✓", else: "-" %></td>
       <td><%= if break.started, do: "✓", else: "-" %></td>
       <td><%= if break.fixed, do: "✓", else: "-" %></td>
