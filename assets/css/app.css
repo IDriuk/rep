@@ -1,1 +1,10 @@
 /* This file is for your main application css. */
+
+.list--none {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.buttons-right {
+  width: 100px;
+}

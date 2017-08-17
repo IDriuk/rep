@@ -1,6 +1,6 @@
 <h2>Show Complectation</h2>
 
-<ul>
+<ul class="list--none">
 
   <li>
     <strong>Station:</strong>
@@ -14,7 +14,7 @@
 
   <li>
     <strong>Underfloor:</strong>
-    <%= @complectation.underfloor %>
+    <%= if @complectation.underfloor, do: "✓", else: "-" %>
   </li>
 
   <li>

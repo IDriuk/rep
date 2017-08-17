@@ -19,7 +19,7 @@
       <td><%= address.entrance %></td>
       <td><%= address.notes %></td>
 
-      <td class="text-right"  width="100px">
+      <td class="text-right buttons-right">
         <span><%= link " ", to: address_path(@conn, :show, address), class: "btn btn-default btn-xs glyphicon glyphicon-eye-open" %></span>
         <span><%= link " ", to: address_path(@conn, :edit, address), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
         <span><%= link " ", to: address_path(@conn, :delete, address), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>

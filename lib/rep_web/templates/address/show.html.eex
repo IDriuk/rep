@@ -1,6 +1,6 @@
 <h2>Show Address</h2>
 
-<ul>
+<ul class="list--none">
 
   <li>
     <strong>Street:</strong>

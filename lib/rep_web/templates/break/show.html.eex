@@ -1,6 +1,6 @@
 <h2>Show Break</h2>
 
-<ul>
+<ul class="list--none">
 
   <li>
     <strong>Served:</strong>
@@ -9,17 +9,17 @@
 
   <li>
     <strong>Stoped:</strong>
-    <%= @break.stoped %>
+    <%= if @break.stoped, do: "✓", else: "-" %>
   </li>
 
   <li>
     <strong>Started:</strong>
-    <%= @break.started %>
+    <%= if @break.started, do: "✓", else: "-" %>
   </li>
 
   <li>
     <strong>Fixed:</strong>
-    <%= @break.fixed %>
+    <%= if @break.fixed, do: "✓", else: "-" %>
   </li>
 
   <li>
