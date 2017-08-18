@@ -4,7 +4,7 @@ defmodule Rep.Repo.Migrations.CreateAddresses do
   def change do
     create table(:addresses) do
       add :street, :string
-      add :house, :string
+      add :house, :integer
       add :entrance, :string
       add :notes, :string
 

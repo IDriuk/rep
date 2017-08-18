@@ -5,7 +5,7 @@ defmodule Rep.Lifts.Address do
 
   schema "addresses" do
     field :entrance, :string
-    field :house, :string
+    field :house, :integer
     field :street, :string
     field :notes, :string
 
