@@ -1,30 +1,71 @@
-<h2>Show Address</h2>
+<strong>Street:</strong> <%= @address.street %>,
+<strong>House:</strong> <%= @address.house%> <%= @address.entrance %>,
+<%= @address.notes %>. &nbsp; &nbsp;
+<span><%= link " ", to: address_path(@conn, :edit, @address), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span><br></br>
 
-<ul class="list--none">
+<h4>Breaks</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Served</th>
+      <th>Stoped</th>
+      <th>Started</th>
+      <th>Fixed</th>
+      <th>Notes</th>
 
-  <li>
-    <strong>Street:</strong>
-    <%= @address.street %>
-  </li>
+      <th><%= link " ", to: address_break_path(@conn, :new, @address.id), class: "pull-right btn btn-default btn-xs glyphicon glyphicon-plus" %></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for break <- @breaks do %>
+    <tr>
+      <td><%= to_date break.served %></td>
+      <td><%= if break.stoped, do: "✓", else: "-" %></td>
+      <td><%= if break.started, do: "✓", else: "-" %></td>
+      <td><%= if break.fixed, do: "✓", else: "-" %></td>
+      <td><%= break.notes %></td>
 
-  <li>
-    <strong>House:</strong>
-    <%= @address.house %>
-  </li>
+      <td class="text-right buttons-right">
+        <span><%= link " ", to: address_break_path(@conn, :show, @address.id, break), class: "btn btn-default btn-xs glyphicon glyphicon-eye-open" %></span>
+        <span><%= link "", to: address_break_path(@conn, :edit, @address.id, break), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
+        <span><%= link " ", to: address_break_path(@conn, :delete, @address.id, break), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
 
-  <li>
-    <strong>Entrance:</strong>
-    <%= @address.entrance %>
-  </li>
+<h4>Complectation</h4>
 
-  <li>
-    <strong>Notes:</strong>
-    <%= @address.notes %>
-  </li>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Station</th>
+      <th>Floors</th>
+      <th>Underfloor</th>
+      <th>Doors</th>
+      <th>Notes</th>
 
-</ul>
+      <th>
+        <span><%= link " ", to: address_complectation_path(@conn, :new, @address), class: "pull-right btn btn-default btn-xs glyphicon glyphicon-plus"  %></span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for complectation <- @complectations do %>
+    <tr>
+      <td><%= complectation.station %></td>
+      <td><%= complectation.floors %></td>
+      <td><%= if complectation.underfloor, do: "✓", else: "-" %></td>
+      <td><%= complectation.doors %></td>
+      <td><%= complectation.notes %></td>
 
-<span><%= link "Edit", to: address_path(@conn, :edit, @address) %></span><br></br>
-
-<span><%= link "breaks", to: address_break_path(@conn, :index, @address.id) %></span></br>
-<span><%= link "complectation", to: address_complectation_path(@conn, :index, @address.id) %></span>
+      <td class="text-right buttons-right">
+        <span><%= link " ", to: address_complectation_path(@conn, :show, @address.id, complectation), class: "btn btn-default btn-xs glyphicon glyphicon-eye-open" %></span>
+        <span><%= link " ", to: address_complectation_path(@conn, :edit, @address.id, complectation), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
+        <span><%= link " ", to: address_complectation_path(@conn, :delete, @address.id, complectation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

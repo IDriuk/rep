@@ -48,7 +48,9 @@ defmodule RepWeb.AddressController do
 
   def show(conn, %{"id" => id}) do
     address = Lifts.get_address!(id)
-    render(conn, "show.html", address: address)
+    breaks = Lifts.list_breaks(address)
+    complectations = Lifts.list_complectations(address)
+    render(conn, "show.html", address: address, breaks: breaks, complectations: complectations)
   end
 
   def edit(conn, %{"id" => id}) do
