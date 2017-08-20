@@ -79,7 +79,7 @@ msgstr "Двери"
 #: lib/rep_web/templates/break/incomplete.html.eex:8
 #: lib/rep_web/templates/break/stops.html.eex:10
 msgid "Fixed"
-msgstr "Исправлено"
+msgstr "Справлено"
 
 #: lib/rep_web/templates/address/show.html.eex:44
 msgid "Floors"
@@ -90,7 +90,7 @@ msgstr "Этажи"
 #: lib/rep_web/templates/break/incomplete.html.eex:6
 #: lib/rep_web/templates/break/stops.html.eex:6
 msgid "Served"
-msgstr "Обслужено"
+msgstr "Обслуж."
 
 #: lib/rep_web/templates/address/show.html.eex:13
 #: lib/rep_web/templates/break/form.html.eex:21
@@ -106,7 +106,7 @@ msgstr "Станция"
 #: lib/rep_web/templates/break/form.html.eex:15
 #: lib/rep_web/templates/break/stops.html.eex:8
 msgid "Stoped"
-msgstr "Остановлен"
+msgstr "Став"
 
 #: lib/rep_web/templates/address/show.html.eex:45
 msgid "Underfloor"
