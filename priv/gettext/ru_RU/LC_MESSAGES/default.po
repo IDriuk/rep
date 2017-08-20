@@ -20,6 +20,7 @@ msgid "Addresses"
 msgstr "Адреса"
 
 #: lib/rep_web/templates/address/index.html.eex:25
+#: lib/rep_web/templates/break/incomplete.html.eex:24
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
@@ -43,6 +44,9 @@ msgstr "Новый адрес"
 #: lib/rep_web/templates/address/index.html.eex:9
 #: lib/rep_web/templates/address/show.html.eex:15
 #: lib/rep_web/templates/address/show.html.eex:47
+#: lib/rep_web/templates/break/form.html.eex:33
+#: lib/rep_web/templates/break/incomplete.html.eex:9
+#: lib/rep_web/templates/break/stops.html.eex:11
 msgid "Notes"
 msgstr "Заметки"
 
@@ -53,6 +57,8 @@ msgid "Street"
 msgstr "Улица"
 
 #: lib/rep_web/templates/address/show.html.eex:1
+#: lib/rep_web/templates/break/incomplete.html.eex:7
+#: lib/rep_web/templates/break/stops.html.eex:7
 msgid "Address"
 msgstr "Адрес"
 
@@ -69,6 +75,9 @@ msgid "Doors"
 msgstr "Двери"
 
 #: lib/rep_web/templates/address/show.html.eex:14
+#: lib/rep_web/templates/break/form.html.eex:27
+#: lib/rep_web/templates/break/incomplete.html.eex:8
+#: lib/rep_web/templates/break/stops.html.eex:10
 msgid "Fixed"
 msgstr "Исправлено"
 
@@ -77,10 +86,15 @@ msgid "Floors"
 msgstr "Этажи"
 
 #: lib/rep_web/templates/address/show.html.eex:11
+#: lib/rep_web/templates/break/form.html.eex:9
+#: lib/rep_web/templates/break/incomplete.html.eex:6
+#: lib/rep_web/templates/break/stops.html.eex:6
 msgid "Served"
 msgstr "Обслужено"
 
 #: lib/rep_web/templates/address/show.html.eex:13
+#: lib/rep_web/templates/break/form.html.eex:21
+#: lib/rep_web/templates/break/stops.html.eex:9
 msgid "Started"
 msgstr "Пущен"
 
@@ -89,6 +103,8 @@ msgid "Station"
 msgstr "Станция"
 
 #: lib/rep_web/templates/address/show.html.eex:12
+#: lib/rep_web/templates/break/form.html.eex:15
+#: lib/rep_web/templates/break/stops.html.eex:8
 msgid "Stoped"
 msgstr "Остановлен"
 
@@ -98,6 +114,8 @@ msgstr "Подпольник"
 
 #: lib/rep_web/templates/address/edit.html.eex:5
 #: lib/rep_web/templates/address/new.html.eex:5
+#: lib/rep_web/templates/break/edit.html.eex:5
+#: lib/rep_web/templates/break/new.html.eex:5
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -106,9 +124,50 @@ msgid "Edit Address"
 msgstr "Редактировать адрес"
 
 #: lib/rep_web/templates/address/form.html.eex:4
+#: lib/rep_web/templates/break/form.html.eex:4
 msgid "Oops, something went wrong! Please check the errors below."
 msgstr "Упс, что-то пошло не так! Проверьте ошибки."
 
 #: lib/rep_web/templates/address/form.html.eex:33
+#: lib/rep_web/templates/break/form.html.eex:39
 msgid "Submit"
 msgstr "Подтвердить"
+
+#: lib/rep_web/templates/session/new.html.eex:5
+msgid "Email"
+msgstr "Почта"
+
+#: lib/rep_web/templates/break/incomplete.html.eex:1
+#: lib/rep_web/templates/layout/app.html.eex:23
+msgid "Incomplete"
+msgstr "Недоделки"
+
+#: lib/rep_web/templates/layout/app.html.eex:24
+#: lib/rep_web/templates/session/new.html.eex:13
+msgid "Login"
+msgstr "Вход"
+
+#: lib/rep_web/templates/session/new.html.eex:19
+msgid "Logout"
+msgstr "Выход"
+
+#: lib/rep_web/templates/session/new.html.eex:9
+msgid "Password"
+msgstr "Пароль"
+
+#: lib/rep_web/templates/session/new.html.eex:1
+msgid "Sign in"
+msgstr "Записаться"
+
+#: lib/rep_web/templates/break/stops.html.eex:1
+#: lib/rep_web/templates/layout/app.html.eex:22
+msgid "Stops"
+msgstr "Остановки"
+
+#: lib/rep_web/templates/break/edit.html.eex:1
+msgid "Edit Break"
+msgstr "Редактировать поломку"
+
+#: lib/rep_web/templates/break/new.html.eex:1
+msgid "New Break"
+msgstr "Новая поломка"

@@ -20,6 +20,7 @@ msgid "Addresses"
 msgstr ""
 
 #: lib/rep_web/templates/address/index.html.eex:25
+#: lib/rep_web/templates/break/incomplete.html.eex:24
 msgid "Are you sure?"
 msgstr ""
 
@@ -43,6 +44,9 @@ msgstr ""
 #: lib/rep_web/templates/address/index.html.eex:9
 #: lib/rep_web/templates/address/show.html.eex:15
 #: lib/rep_web/templates/address/show.html.eex:47
+#: lib/rep_web/templates/break/form.html.eex:33
+#: lib/rep_web/templates/break/incomplete.html.eex:9
+#: lib/rep_web/templates/break/stops.html.eex:11
 msgid "Notes"
 msgstr ""
 
@@ -53,6 +57,8 @@ msgid "Street"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:1
+#: lib/rep_web/templates/break/incomplete.html.eex:7
+#: lib/rep_web/templates/break/stops.html.eex:7
 msgid "Address"
 msgstr ""
 
@@ -69,6 +75,9 @@ msgid "Doors"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:14
+#: lib/rep_web/templates/break/form.html.eex:27
+#: lib/rep_web/templates/break/incomplete.html.eex:8
+#: lib/rep_web/templates/break/stops.html.eex:10
 msgid "Fixed"
 msgstr ""
 
@@ -77,10 +86,15 @@ msgid "Floors"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:11
+#: lib/rep_web/templates/break/form.html.eex:9
+#: lib/rep_web/templates/break/incomplete.html.eex:6
+#: lib/rep_web/templates/break/stops.html.eex:6
 msgid "Served"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:13
+#: lib/rep_web/templates/break/form.html.eex:21
+#: lib/rep_web/templates/break/stops.html.eex:9
 msgid "Started"
 msgstr ""
 
@@ -89,6 +103,8 @@ msgid "Station"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:12
+#: lib/rep_web/templates/break/form.html.eex:15
+#: lib/rep_web/templates/break/stops.html.eex:8
 msgid "Stoped"
 msgstr ""
 
@@ -98,6 +114,8 @@ msgstr ""
 
 #: lib/rep_web/templates/address/edit.html.eex:5
 #: lib/rep_web/templates/address/new.html.eex:5
+#: lib/rep_web/templates/break/edit.html.eex:5
+#: lib/rep_web/templates/break/new.html.eex:5
 msgid "Cancel"
 msgstr ""
 
@@ -106,9 +124,50 @@ msgid "Edit Address"
 msgstr ""
 
 #: lib/rep_web/templates/address/form.html.eex:4
+#: lib/rep_web/templates/break/form.html.eex:4
 msgid "Oops, something went wrong! Please check the errors below."
 msgstr ""
 
 #: lib/rep_web/templates/address/form.html.eex:33
+#: lib/rep_web/templates/break/form.html.eex:39
 msgid "Submit"
+msgstr ""
+
+#: lib/rep_web/templates/session/new.html.eex:5
+msgid "Email"
+msgstr ""
+
+#: lib/rep_web/templates/break/incomplete.html.eex:1
+#: lib/rep_web/templates/layout/app.html.eex:23
+msgid "Incomplete"
+msgstr ""
+
+#: lib/rep_web/templates/layout/app.html.eex:24
+#: lib/rep_web/templates/session/new.html.eex:13
+msgid "Login"
+msgstr ""
+
+#: lib/rep_web/templates/session/new.html.eex:19
+msgid "Logout"
+msgstr ""
+
+#: lib/rep_web/templates/session/new.html.eex:9
+msgid "Password"
+msgstr ""
+
+#: lib/rep_web/templates/session/new.html.eex:1
+msgid "Sign in"
+msgstr ""
+
+#: lib/rep_web/templates/break/stops.html.eex:1
+#: lib/rep_web/templates/layout/app.html.eex:22
+msgid "Stops"
+msgstr ""
+
+#: lib/rep_web/templates/break/edit.html.eex:1
+msgid "Edit Break"
+msgstr ""
+
+#: lib/rep_web/templates/break/new.html.eex:1
+msgid "New Break"
 msgstr ""

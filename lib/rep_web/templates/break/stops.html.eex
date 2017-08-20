@@ -1,14 +1,14 @@
-<h2>Stops</h2>
+<h2><%= gettext "Stops" %></h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Served</th>
-      <th>Address</th>
-      <th>Stoped</th>
-      <th>Started</th>
-      <th>Fixed</th>
-      <th>Notes</th>
+      <th><%= gettext "Served" %></th>
+      <th><%= gettext "Address" %></th>
+      <th><%= gettext "Stoped" %></th>
+      <th><%= gettext "Started" %></th>
+      <th><%= gettext "Fixed" %></th>
+      <th><%= gettext "Notes" %></th>
 
       <th></th>
     </tr>
