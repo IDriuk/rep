@@ -52,7 +52,7 @@ defmodule RepWeb.BreakController do
   def create(conn, %{"break" => break_params, "address_id" => address_id}) do
     address = Lifts.get_address!(address_id)
     case Lifts.create_break(address, break_params) do
-      {:ok, break} ->
+      {:ok, _break} ->
         conn
         |> put_flash(:info, "Break created successfully.")
         |> redirect(to: address_path(conn, :show, address_id))
@@ -79,7 +79,7 @@ defmodule RepWeb.BreakController do
     break = Lifts.get_break!(id)
 
     case Lifts.update_break(break, break_params) do
-      {:ok, break} ->
+      {:ok, _break} ->
         conn
         |> put_flash(:info, "Break updated successfully.")
         |> redirect(to: address_path(conn, :show, address))

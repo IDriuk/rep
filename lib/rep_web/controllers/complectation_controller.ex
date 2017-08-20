@@ -19,7 +19,7 @@ defmodule RepWeb.ComplectationController do
   def create(conn, %{"complectation" => complectation_params, "address_id" => address_id}) do
     address = Lifts.get_address!(address_id)
     case Lifts.create_complectation(address, complectation_params) do
-      {:ok, complectation} ->
+      {:ok, _complectation} ->
         conn
         |> put_flash(:info, "Complectation created successfully.")
         |> redirect(to: address_path(conn, :show, address_id))
@@ -46,7 +46,7 @@ defmodule RepWeb.ComplectationController do
     complectation = Lifts.get_complectation!(id)
 
     case Lifts.update_complectation(complectation, complectation_params) do
-      {:ok, complectation} ->
+      {:ok, _complectation} ->
         conn
         |> put_flash(:info, "Complectation updated successfully.")
         |> redirect(to: address_path(conn, :show, address))

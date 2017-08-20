@@ -1,12 +1,12 @@
-<h2>Addresses</h2>
+<h2><%= gettext "Addresses" %></h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Street</th>
-      <th>House</th>
-      <th>Entrance</th>
-      <th>Notes</th>
+      <th><%= gettext "Street" %></th>
+      <th><%= gettext "House" %></th>
+      <th><%= gettext "Entrance" %></th>
+      <th><%= gettext "Notes" %></th>
 
       <th></th>
     </tr>
@@ -22,11 +22,11 @@
       <td class="text-right buttons-right">
         <span><%= link " ", to: address_path(@conn, :show, address), class: "btn btn-default btn-xs glyphicon glyphicon-eye-open" %></span>
         <span><%= link " ", to: address_path(@conn, :edit, address), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
-        <span><%= link " ", to: address_path(@conn, :delete, address), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
+        <span><%= link " ", to: address_path(@conn, :delete, address), method: :delete, data: [confirm: gettext("Are you sure?")], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Address", to: address_path(@conn, :new) %></span>
+<span><%= link gettext("New Address"), to: address_path(@conn, :new) %></span>

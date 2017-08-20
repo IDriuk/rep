@@ -17,7 +17,7 @@ config :rep, RepWeb.Endpoint,
   pubsub: [name: Rep.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
-config :rep, Rep.Gettext, default_locale: "ru_RU"
+config :rep, RepWeb.Gettext, default_locale: "ru_RU"
 
 # Configures Elixir's Logger
 config :logger, :console,

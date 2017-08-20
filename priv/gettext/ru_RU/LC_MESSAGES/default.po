@@ -12,4 +12,32 @@ msgstr ""
 
 #: lib/rep_web/templates/page/index.html.eex:2
 msgid "Welcome to %{name}!"
-msgstr ""
+msgstr "Привет %{name}!"
+
+#: lib/rep_web/templates/address/index.html.eex:1
+msgid "Addresses"
+msgstr "Адреса"
+
+#: lib/rep_web/templates/address/index.html.eex:25
+msgid "Are you sure?"
+msgstr "Вы уверены?"
+
+#: lib/rep_web/templates/address/index.html.eex:8
+msgid "Entrance"
+msgstr "Подъезд"
+
+#: lib/rep_web/templates/address/index.html.eex:7
+msgid "House"
+msgstr "Дом"
+
+#: lib/rep_web/templates/address/index.html.eex:32
+msgid "New Address"
+msgstr "Новый адрес"
+
+#: lib/rep_web/templates/address/index.html.eex:9
+msgid "Notes"
+msgstr "Заметки"
+
+#: lib/rep_web/templates/address/index.html.eex:6
+msgid "Street"
+msgstr "Улица"
