@@ -47,6 +47,7 @@ msgstr ""
 #: lib/rep_web/templates/break/form.html.eex:33
 #: lib/rep_web/templates/break/incomplete.html.eex:9
 #: lib/rep_web/templates/break/stops.html.eex:11
+#: lib/rep_web/templates/complectation/form.html.eex:33
 msgid "Notes"
 msgstr ""
 
@@ -71,6 +72,7 @@ msgid "Complectation"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:46
+#: lib/rep_web/templates/complectation/form.html.eex:27
 msgid "Doors"
 msgstr ""
 
@@ -82,6 +84,7 @@ msgid "Fixed"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:44
+#: lib/rep_web/templates/complectation/form.html.eex:15
 msgid "Floors"
 msgstr ""
 
@@ -99,6 +102,7 @@ msgid "Started"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:43
+#: lib/rep_web/templates/complectation/form.html.eex:9
 msgid "Station"
 msgstr ""
 
@@ -109,6 +113,7 @@ msgid "Stoped"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:45
+#: lib/rep_web/templates/complectation/form.html.eex:21
 msgid "Underfloor"
 msgstr ""
 
@@ -116,6 +121,8 @@ msgstr ""
 #: lib/rep_web/templates/address/new.html.eex:5
 #: lib/rep_web/templates/break/edit.html.eex:5
 #: lib/rep_web/templates/break/new.html.eex:5
+#: lib/rep_web/templates/complectation/edit.html.eex:5
+#: lib/rep_web/templates/complectation/new.html.eex:5
 msgid "Cancel"
 msgstr ""
 
@@ -125,11 +132,13 @@ msgstr ""
 
 #: lib/rep_web/templates/address/form.html.eex:4
 #: lib/rep_web/templates/break/form.html.eex:4
+#: lib/rep_web/templates/complectation/form.html.eex:4
 msgid "Oops, something went wrong! Please check the errors below."
 msgstr ""
 
 #: lib/rep_web/templates/address/form.html.eex:33
 #: lib/rep_web/templates/break/form.html.eex:39
+#: lib/rep_web/templates/complectation/form.html.eex:39
 msgid "Submit"
 msgstr ""
 
@@ -170,4 +179,12 @@ msgstr ""
 
 #: lib/rep_web/templates/break/new.html.eex:1
 msgid "New Break"
+msgstr ""
+
+#: lib/rep_web/templates/complectation/edit.html.eex:1
+msgid "Edit Complectation"
+msgstr ""
+
+#: lib/rep_web/templates/complectation/new.html.eex:1
+msgid "New Complectation"
 msgstr ""

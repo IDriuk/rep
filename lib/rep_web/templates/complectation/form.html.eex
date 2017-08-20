@@ -1,41 +1,41 @@
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p><%= gettext("Oops, something went wrong! Please check the errors below.") %></p>
     </div>
   <% end %>
 
   <div class="form-group">
-    <%= label f, :station, class: "control-label" %>
+    <%= label f, gettext("Station"), class: "control-label" %>
     <%= text_input f, :station, class: "form-control" %>
     <%= error_tag f, :station %>
   </div>
 
   <div class="form-group">
-    <%= label f, :floors, class: "control-label" %>
+    <%= label f, gettext("Floors"), class: "control-label" %>
     <%= number_input f, :floors, class: "form-control" %>
     <%= error_tag f, :floors %>
   </div>
 
   <div class="form-group">
-    <%= label f, :underfloor, class: "control-label" %>
+    <%= label f, gettext("Underfloor"), class: "control-label" %>
     <%= checkbox f, :underfloor, class: "checkbox" %>
     <%= error_tag f, :underfloor %>
   </div>
 
   <div class="form-group">
-    <%= label f, :doors, class: "control-label" %>
+    <%= label f, gettext("Doors"), class: "control-label" %>
     <%= text_input f, :doors, class: "form-control" %>
     <%= error_tag f, :doors %>
   </div>
 
   <div class="form-group">
-    <%= label f, :notes, class: "control-label" %>
+    <%= label f, gettext("Notes"), class: "control-label" %>
     <%= text_input f, :notes, class: "form-control" %>
     <%= error_tag f, :notes %>
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit gettext("Submit"), class: "btn btn-primary" %>
   </div>
 <% end %>

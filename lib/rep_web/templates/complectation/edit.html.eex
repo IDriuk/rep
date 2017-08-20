@@ -1,5 +1,5 @@
-<h2>Edit Complectation</h2>
+<h2><%= gettext("Edit Complectation") %></h2>
 
 <%= render "form.html", Map.put(assigns, :action, address_complectation_path(@conn, :update, @address.id, @complectation)) %>
 
-<span><%= link "Cancel", to: address_path(@conn, :show, @address) %></span>
+<span><%= link gettext("Cancel"), to: address_path(@conn, :show, @address) %></span>

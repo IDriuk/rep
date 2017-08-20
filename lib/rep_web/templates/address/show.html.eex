@@ -28,7 +28,7 @@
 
       <td class="text-right buttons-right">
         <span><%= link "", to: address_break_path(@conn, :edit, @address.id, break), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
-        <span><%= link " ", to: address_break_path(@conn, :delete, @address.id, break), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
+        <span><%= link " ", to: address_break_path(@conn, :delete, @address.id, break), method: :delete, data: [confirm: gettext("Are you sure?")], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
       </td>
     </tr>
 <% end %>
@@ -62,7 +62,7 @@
 
       <td class="text-right buttons-right">
         <span><%= link " ", to: address_complectation_path(@conn, :edit, @address.id, complectation), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
-        <span><%= link " ", to: address_complectation_path(@conn, :delete, @address.id, complectation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
+        <span><%= link " ", to: address_complectation_path(@conn, :delete, @address.id, complectation), method: :delete, data: [confirm: gettext("Are you sure?")], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
       </td>
     </tr>
 <% end %>
