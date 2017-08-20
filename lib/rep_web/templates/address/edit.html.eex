@@ -1,5 +1,5 @@
-<h2>Edit Address</h2>
+<h2><%= gettext "Edit Address" %></h2>
 
 <%= render "form.html", Map.put(assigns, :action, address_path(@conn, :update, @address)) %>
 
-<span><%= link "Cancel", to: address_path(@conn, :index) %></span>
+<span><%= link gettext("Cancel"), to: address_path(@conn, :index) %></span>

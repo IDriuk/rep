@@ -1,5 +1,5 @@
-<h2>New Address</h2>
+<h2><%= gettext "New Address" %></h2>
 
 <%= render "form.html", Map.put(assigns, :action, address_path(@conn, :create)) %>
 
-<span><%= link "Cancel", to: address_path(@conn, :index) %></span>
+<span><%= link gettext("Cancel"), to: address_path(@conn, :index) %></span>

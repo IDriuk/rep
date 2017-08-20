@@ -1,18 +1,18 @@
-<h2> Address </h2>
-<strong>Street:</strong> <%= @address.street %>,
-<strong>House:</strong> <%= @address.house%> <%= @address.entrance %>,
+<h2> <%= gettext "Address" %> </h2>
+<strong><%= gettext "Street" %>:</strong> <%= @address.street %>,
+<strong><%= gettext "House" %>:</strong> <%= @address.house%> <%= @address.entrance %>,
 <%= @address.notes %>. &nbsp; &nbsp;
 <span><%= link " ", to: address_path(@conn, :edit, @address), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span><br></br>
 
-<h4>Breaks</h4>
+<h4><%= gettext "Breaks" %></h4>
 <table class="table">
   <thead>
     <tr>
-      <th>Served</th>
-      <th>Stoped</th>
-      <th>Started</th>
-      <th>Fixed</th>
-      <th>Notes</th>
+      <th><%= gettext "Served" %></th>
+      <th><%= gettext "Stoped" %></th>
+      <th><%= gettext "Started" %></th>
+      <th><%= gettext "Fixed" %></th>
+      <th><%= gettext "Notes" %></th>
 
       <th><%= link " ", to: address_break_path(@conn, :new, @address.id), class: "pull-right btn btn-default btn-xs glyphicon glyphicon-plus" %></th>
     </tr>
@@ -35,16 +35,16 @@
   </tbody>
 </table>
 
-<h4>Complectation</h4>
+<h4><%= gettext "Complectation" %></h4>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Station</th>
-      <th>Floors</th>
-      <th>Underfloor</th>
-      <th>Doors</th>
-      <th>Notes</th>
+      <th><%= gettext "Station" %></th>
+      <th><%= gettext "Floors" %></th>
+      <th><%= gettext "Underfloor" %></th>
+      <th><%= gettext "Doors" %></th>
+      <th><%= gettext "Notes" %></th>
 
       <th>
         <span><%= link " ", to: address_complectation_path(@conn, :new, @address), class: "pull-right btn btn-default btn-xs glyphicon glyphicon-plus"  %></span>

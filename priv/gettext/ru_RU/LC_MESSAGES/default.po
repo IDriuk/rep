@@ -15,6 +15,7 @@ msgid "Welcome to %{name}!"
 msgstr "Привет %{name}!"
 
 #: lib/rep_web/templates/address/index.html.eex:1
+#: lib/rep_web/templates/layout/app.html.eex:21
 msgid "Addresses"
 msgstr "Адреса"
 
@@ -22,22 +23,92 @@ msgstr "Адреса"
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
+#: lib/rep_web/templates/address/form.html.eex:21
 #: lib/rep_web/templates/address/index.html.eex:8
 msgid "Entrance"
 msgstr "Подъезд"
 
+#: lib/rep_web/templates/address/form.html.eex:15
 #: lib/rep_web/templates/address/index.html.eex:7
+#: lib/rep_web/templates/address/show.html.eex:3
 msgid "House"
 msgstr "Дом"
 
 #: lib/rep_web/templates/address/index.html.eex:32
+#: lib/rep_web/templates/address/new.html.eex:1
 msgid "New Address"
 msgstr "Новый адрес"
 
+#: lib/rep_web/templates/address/form.html.eex:27
 #: lib/rep_web/templates/address/index.html.eex:9
+#: lib/rep_web/templates/address/show.html.eex:15
+#: lib/rep_web/templates/address/show.html.eex:47
 msgid "Notes"
 msgstr "Заметки"
 
+#: lib/rep_web/templates/address/form.html.eex:9
 #: lib/rep_web/templates/address/index.html.eex:6
+#: lib/rep_web/templates/address/show.html.eex:2
 msgid "Street"
 msgstr "Улица"
+
+#: lib/rep_web/templates/address/show.html.eex:1
+msgid "Address"
+msgstr "Адрес"
+
+#: lib/rep_web/templates/address/show.html.eex:7
+msgid "Breaks"
+msgstr "Поломки"
+
+#: lib/rep_web/templates/address/show.html.eex:38
+msgid "Complectation"
+msgstr "Комплектация"
+
+#: lib/rep_web/templates/address/show.html.eex:46
+msgid "Doors"
+msgstr "Двери"
+
+#: lib/rep_web/templates/address/show.html.eex:14
+msgid "Fixed"
+msgstr "Исправлено"
+
+#: lib/rep_web/templates/address/show.html.eex:44
+msgid "Floors"
+msgstr "Этажи"
+
+#: lib/rep_web/templates/address/show.html.eex:11
+msgid "Served"
+msgstr "Обслужено"
+
+#: lib/rep_web/templates/address/show.html.eex:13
+msgid "Started"
+msgstr "Пущен"
+
+#: lib/rep_web/templates/address/show.html.eex:43
+msgid "Station"
+msgstr "Станция"
+
+#: lib/rep_web/templates/address/show.html.eex:12
+msgid "Stoped"
+msgstr "Остановлен"
+
+#: lib/rep_web/templates/address/show.html.eex:45
+msgid "Underfloor"
+msgstr "Подпольник"
+
+#: lib/rep_web/templates/address/edit.html.eex:5
+#: lib/rep_web/templates/address/new.html.eex:5
+msgid "Cancel"
+msgstr "Отмена"
+
+#: lib/rep_web/templates/address/edit.html.eex:1
+msgid "Edit Address"
+msgstr "Редактировать адрес"
+
+#: lib/rep_web/templates/address/form.html.eex:4
+msgid "Oops, something went wrong! Please check the errors below."
+msgstr "Упс, что-то пошло не так! Проверьте ошибки."
+
+#: lib/rep_web/templates/address/form.html.eex:33
+msgid "Submit"
+msgstr "Подтвердить"

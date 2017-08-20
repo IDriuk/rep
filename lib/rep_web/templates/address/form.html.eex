@@ -1,35 +1,35 @@
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p><%= gettext "Oops, something went wrong! Please check the errors below." %></p>
     </div>
   <% end %>
 
   <div class="form-group">
-    <%= label f, :street, class: "control-label" %>
+    <%= label f, gettext("Street"), class: "control-label" %>
     <%= text_input f, :street, class: "form-control" %>
     <%= error_tag f, :street %>
   </div>
 
   <div class="form-group">
-    <%= label f, :house, class: "control-label" %>
+    <%= label f, gettext("House"), class: "control-label" %>
     <%= text_input f, :house, class: "form-control" %>
     <%= error_tag f, :house %>
   </div>
 
   <div class="form-group">
-    <%= label f, :entrance, class: "control-label" %>
+    <%= label f, gettext("Entrance"), class: "control-label" %>
     <%= text_input f, :entrance, class: "form-control" %>
     <%= error_tag f, :entrance %>
   </div>
 
   <div class="form-group">
-    <%= label f, :notes, class: "control-label" %>
+    <%= label f, gettext("Notes"), class: "control-label" %>
     <%= text_input f, :notes, class: "form-control" %>
     <%= error_tag f, :notes %>
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit gettext("Submit"), class: "btn btn-primary" %>
   </div>
 <% end %>
