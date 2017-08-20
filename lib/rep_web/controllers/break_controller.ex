@@ -55,7 +55,7 @@ defmodule RepWeb.BreakController do
       {:ok, break} ->
         conn
         |> put_flash(:info, "Break created successfully.")
-        |> redirect(to: address_break_path(conn, :show, address_id, break))
+        |> redirect(to: address_path(conn, :show, address_id))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", address: address, changeset: changeset)
     end
@@ -82,7 +82,7 @@ defmodule RepWeb.BreakController do
       {:ok, break} ->
         conn
         |> put_flash(:info, "Break updated successfully.")
-        |> redirect(to: address_break_path(conn, :show, address.id, break))
+        |> redirect(to: address_path(conn, :show, address))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", address: address, break: break, changeset: changeset)
     end
@@ -95,6 +95,6 @@ defmodule RepWeb.BreakController do
 
     conn
     |> put_flash(:info, "Break deleted successfully.")
-    |> redirect(to: address_break_path(conn, :index, address))
+    |> redirect(to: address_path(conn, :show, address))
   end
 end

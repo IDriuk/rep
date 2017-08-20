@@ -2,4 +2,4 @@
 
 <%= render "form.html", Map.put(assigns, :action, address_complectation_path(@conn, :create, @address)) %>
 
-<span><%= link "Cancel", to: address_complectation_path(@conn, :index, @address) %></span>
+<span><%= link "Cancel", to: address_path(@conn, :show, @address) %></span>

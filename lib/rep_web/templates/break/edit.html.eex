@@ -2,4 +2,4 @@
 
 <%= render "form.html", Map.put(assigns, :action, address_break_path(@conn, :update, @address.id, @break)) %>
 
-<span><%= link "Cancel", to: address_break_path(@conn, :index, @address) %></span>
+<span><%= link "Cancel", to: address_path(@conn, :show, @address) %></span>
