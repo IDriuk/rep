@@ -20,6 +20,8 @@ msgid "Addresses"
 msgstr "Адреса"
 
 #: lib/rep_web/templates/address/index.html.eex:25
+#: lib/rep_web/templates/address/show.html.eex:31
+#: lib/rep_web/templates/address/show.html.eex:65
 #: lib/rep_web/templates/break/incomplete.html.eex:24
 msgid "Are you sure?"
 msgstr "Вы уверены?"
@@ -142,10 +144,6 @@ msgstr "Упс, что-то пошло не так! Проверьте ошиб�
 msgid "Submit"
 msgstr "Подтвердить"
 
-#: lib/rep_web/templates/session/new.html.eex:5
-msgid "Email"
-msgstr "Почта"
-
 #: lib/rep_web/templates/break/incomplete.html.eex:1
 #: lib/rep_web/templates/layout/app.html.eex:23
 msgid "Incomplete"
@@ -159,10 +157,6 @@ msgstr "Вход"
 #: lib/rep_web/templates/session/new.html.eex:19
 msgid "Logout"
 msgstr "Выход"
-
-#: lib/rep_web/templates/session/new.html.eex:9
-msgid "Password"
-msgstr "Пароль"
 
 #: lib/rep_web/templates/session/new.html.eex:1
 msgid "Sign in"
@@ -188,3 +182,7 @@ msgstr "Редактировать комплектацию"
 #: lib/rep_web/templates/complectation/new.html.eex:1
 msgid "New Complectation"
 msgstr "Новая комплектация"
+
+#: lib/rep_web/controllers/session_controller.ex:14
+msgid "Welcome back!"
+msgstr "С возвращением!"
