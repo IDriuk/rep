@@ -48,6 +48,7 @@ defmodule RepWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import RepWeb.Gettext
     end
   end
 

@@ -11,7 +11,7 @@ msgstr ""
 "Language: ru_RU\n"
 
 msgid "can't be blank"
-msgstr ""
+msgstr "не может быть пустым"
 
 msgid "has already been taken"
 msgstr ""

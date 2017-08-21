@@ -23,6 +23,7 @@ msgstr "Адреса"
 #: lib/rep_web/templates/address/show.html.eex:31
 #: lib/rep_web/templates/address/show.html.eex:65
 #: lib/rep_web/templates/break/incomplete.html.eex:24
+#: lib/rep_web/templates/break/stops.html.eex:28
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
@@ -186,3 +187,7 @@ msgstr "Новая комплектация"
 #: lib/rep_web/controllers/session_controller.ex:14
 msgid "Welcome back!"
 msgstr "С возвращением!"
+
+#: lib/rep_web/router.ex:48
+msgid "Login required"
+msgstr "Требуется регистрация"
