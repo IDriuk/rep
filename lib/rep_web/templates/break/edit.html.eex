@@ -1,5 +1,5 @@
 <h2><%= gettext("Edit Break") %></h2>
 
-<%= render "form_normal.html", Map.put(assigns, :action, address_break_path(@conn, :update, @address.id, @break)) %>
+<%= render "form.html", Map.put(assigns, :action, address_break_path(@conn, :update, @address.id, @break)) %>
 
 <span><%= link gettext("Cancel"), to: address_path(@conn, :show, @address) %></span>

@@ -6,62 +6,24 @@
   <% end %>
 
   <div class="form-group">
-    <label class="control-label" for="break_Обслуж.">Обслуж.</label>
-    <select id="break_served_day" name="break[served][day]">
-      <option value="1">01</option>
-      <option value="2">02</option>
-      <option value="3">03</option>
-      <option value="4">04</option>
-      <option value="5">05</option>
-      <option value="6">06</option>
-      <option value="7">07</option>
-      <option value="8">08</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-      <option value="15">15</option>
-      <option value="16">16</option>
-      <option value="17">17</option>
-      <option value="18">18</option>
-      <option value="19">19</option>
-      <option value="20">20</option>
-      <option value="21">21</option>
-      <option value="22">22</option>
-      <option value="23">23</option>
-      <option value="24">24</option>
-      <option value="25">25</option>
-      <option value="26">26</option>
-      <option value="27">27</option>
-      <option value="28">28</option>
-      <option value="29">29</option>
-      <option value="30">30</option>
-      <option value="31">31</option>
-    </select> / 
-    <select id="break_served_month" name="break[served][month]">
-      <option value="1">Январь</option>
-      <option value="2">Февраль</option>
-      <option value="3">Март</option>
-      <option value="4">Апрель</option>
-      <option value="5">Май</option>
-      <option value="6">Июнь</option>
-      <option value="7">Июль</option>
-      <option value="8">Август</option>
-      <option value="9">Сентябрь</option>
-      <option value="10">Октябрь</option>
-      <option value="11">Ноябрь</option>
-      <option value="12">Декабрь</option>
-    </select> /
-    <select id="break_served_year" name="break[served][year]">
-      <option value="2016">2016</option>
-      <option value="2017">2017</option>
-      <option value="2018">2018</option>
-      <option value="2019">2019</option>
-      <option value="2020">2020</option>
-      <option value="2021">2021</option>
-    </select>
+    <%= label f, gettext("Served"), class: "control-label" %>
+    <%= date_select f, :served,
+      year: [options: 2016..2020],
+      month: [options: [[key: "январь", value: 1],
+                        [key: "февраль", value: 2],
+                        [key: "март", value: 3],
+                        [key: "апрель", value: 4],
+                        [key: "май", value: 5],
+                        [key: "июнь", value: 6],
+                        [key: "июль", value: 7],
+                        [key: "август", value: 8],
+                        [key: "сентябрь", value: 9],
+                        [key: "октябрь", value: 10],
+                        [key: "ноябрь", value: 11],
+                        [key: "декабрь", value: 12]]], builder: fn b -> %>
+      <%= b.(:day, []) %> / <%= b.(:month, []) %> / <%= b.(:year, []) %>
+    <% end %>
+    <%= error_tag f, :served %>
   </div>
 
   <div class="form-group">
