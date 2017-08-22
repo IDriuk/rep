@@ -5,9 +5,7 @@
     <tr>
       <th><%= gettext "Served" %></th>
       <th><%= gettext "Address" %></th>
-      <th><%= gettext "Stoped" %></th>
       <th><%= gettext "Started" %></th>
-      <th><%= gettext "Fixed" %></th>
       <th><%= gettext "Notes" %></th>
 
       <th></th>
@@ -18,9 +16,7 @@
     <tr>
       <td><%= to_date break.served %></td>
       <td><%= link get_short_address(break.address), to: address_path(@conn, :show, break.address) %></td>
-      <td><%= if break.stoped, do: "✓", else: "-" %></td>
       <td><%= if break.started, do: "✓", else: "-" %></td>
-      <td><%= if break.fixed, do: "✓", else: "-" %></td>
       <td><%= break.notes %></td>
 
       <td class="text-right buttons-right">

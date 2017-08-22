@@ -222,7 +222,7 @@ defmodule Rep.Lifts do
             inner_join: a in assoc(b, :address),
             where: a.mechanic_id == ^mechanic.id,
             where: b.stoped == :true,
-            order_by: [desc: b.served]
+            order_by: [asc: b.started, desc: b.served]
     Repo.all(query) |> Repo.preload(:address)
   end
 
@@ -231,7 +231,7 @@ defmodule Rep.Lifts do
             inner_join: a in assoc(b, :address),
             where: a.mechanic_id == ^mechanic.id,
             where: b.stoped == :false,
-            order_by: [desc: b.served]
+            order_by: [asc: b.fixed, desc: b.served]
     Repo.all(query) |> Repo.preload(:address)
   end
 
