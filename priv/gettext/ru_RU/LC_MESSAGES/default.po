@@ -23,7 +23,7 @@ msgstr "Адреса"
 #: lib/rep_web/templates/address/show.html.eex:31
 #: lib/rep_web/templates/address/show.html.eex:65
 #: lib/rep_web/templates/break/incomplete.html.eex:24
-#: lib/rep_web/templates/break/stops.html.eex:28
+#: lib/rep_web/templates/break/stops.html.eex:24
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
@@ -47,9 +47,9 @@ msgstr "Новый адрес"
 #: lib/rep_web/templates/address/index.html.eex:9
 #: lib/rep_web/templates/address/show.html.eex:15
 #: lib/rep_web/templates/address/show.html.eex:47
-#: lib/rep_web/templates/break/form.html.eex:33
+#: lib/rep_web/templates/break/form.html.eex:48
 #: lib/rep_web/templates/break/incomplete.html.eex:9
-#: lib/rep_web/templates/break/stops.html.eex:11
+#: lib/rep_web/templates/break/stops.html.eex:9
 #: lib/rep_web/templates/complectation/form.html.eex:33
 msgid "Notes"
 msgstr "Заметки"
@@ -80,9 +80,8 @@ msgid "Doors"
 msgstr "Двери"
 
 #: lib/rep_web/templates/address/show.html.eex:14
-#: lib/rep_web/templates/break/form.html.eex:27
+#: lib/rep_web/templates/break/form.html.eex:42
 #: lib/rep_web/templates/break/incomplete.html.eex:8
-#: lib/rep_web/templates/break/stops.html.eex:10
 msgid "Fixed"
 msgstr "Справлено"
 
@@ -99,8 +98,8 @@ msgid "Served"
 msgstr "Обслуж."
 
 #: lib/rep_web/templates/address/show.html.eex:13
-#: lib/rep_web/templates/break/form.html.eex:21
-#: lib/rep_web/templates/break/stops.html.eex:9
+#: lib/rep_web/templates/break/form.html.eex:36
+#: lib/rep_web/templates/break/stops.html.eex:8
 msgid "Started"
 msgstr "Пущен"
 
@@ -110,8 +109,7 @@ msgid "Station"
 msgstr "Станция"
 
 #: lib/rep_web/templates/address/show.html.eex:12
-#: lib/rep_web/templates/break/form.html.eex:15
-#: lib/rep_web/templates/break/stops.html.eex:8
+#: lib/rep_web/templates/break/form.html.eex:30
 msgid "Stoped"
 msgstr "Став"
 
@@ -140,7 +138,7 @@ msgid "Oops, something went wrong! Please check the errors below."
 msgstr "Упс, что-то пошло не так! Проверьте ошибки."
 
 #: lib/rep_web/templates/address/form.html.eex:33
-#: lib/rep_web/templates/break/form.html.eex:39
+#: lib/rep_web/templates/break/form.html.eex:54
 #: lib/rep_web/templates/complectation/form.html.eex:39
 msgid "Submit"
 msgstr "Подтвердить"
@@ -191,3 +189,51 @@ msgstr "С возвращением!"
 #: lib/rep_web/router.ex:48
 msgid "Login required"
 msgstr "Требуется регистрация"
+
+#: lib/rep_web/templates/break/form.html.eex:15
+msgid "April"
+msgstr "апрель"
+
+#: lib/rep_web/templates/break/form.html.eex:19
+msgid "August"
+msgstr "август"
+
+#: lib/rep_web/templates/break/form.html.eex:23
+msgid "December"
+msgstr "декабрь"
+
+#: lib/rep_web/templates/break/form.html.eex:13
+msgid "February"
+msgstr "февраль"
+
+#: lib/rep_web/templates/break/form.html.eex:12
+msgid "January"
+msgstr "январь"
+
+#: lib/rep_web/templates/break/form.html.eex:18
+msgid "July"
+msgstr "июль"
+
+#: lib/rep_web/templates/break/form.html.eex:17
+msgid "June"
+msgstr "июнь"
+
+#: lib/rep_web/templates/break/form.html.eex:14
+msgid "March"
+msgstr "март"
+
+#: lib/rep_web/templates/break/form.html.eex:16
+msgid "May"
+msgstr "май"
+
+#: lib/rep_web/templates/break/form.html.eex:22
+msgid "November"
+msgstr "ноябрь"
+
+#: lib/rep_web/templates/break/form.html.eex:21
+msgid "October"
+msgstr "октябрь"
+
+#: lib/rep_web/templates/break/form.html.eex:20
+msgid "September"
+msgstr "сентябрь"

@@ -23,7 +23,7 @@ msgstr ""
 #: lib/rep_web/templates/address/show.html.eex:31
 #: lib/rep_web/templates/address/show.html.eex:65
 #: lib/rep_web/templates/break/incomplete.html.eex:24
-#: lib/rep_web/templates/break/stops.html.eex:28
+#: lib/rep_web/templates/break/stops.html.eex:24
 msgid "Are you sure?"
 msgstr ""
 
@@ -47,9 +47,9 @@ msgstr ""
 #: lib/rep_web/templates/address/index.html.eex:9
 #: lib/rep_web/templates/address/show.html.eex:15
 #: lib/rep_web/templates/address/show.html.eex:47
-#: lib/rep_web/templates/break/form.html.eex:33
+#: lib/rep_web/templates/break/form.html.eex:48
 #: lib/rep_web/templates/break/incomplete.html.eex:9
-#: lib/rep_web/templates/break/stops.html.eex:11
+#: lib/rep_web/templates/break/stops.html.eex:9
 #: lib/rep_web/templates/complectation/form.html.eex:33
 msgid "Notes"
 msgstr ""
@@ -80,9 +80,8 @@ msgid "Doors"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:14
-#: lib/rep_web/templates/break/form.html.eex:27
+#: lib/rep_web/templates/break/form.html.eex:42
 #: lib/rep_web/templates/break/incomplete.html.eex:8
-#: lib/rep_web/templates/break/stops.html.eex:10
 msgid "Fixed"
 msgstr ""
 
@@ -99,8 +98,8 @@ msgid "Served"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:13
-#: lib/rep_web/templates/break/form.html.eex:21
-#: lib/rep_web/templates/break/stops.html.eex:9
+#: lib/rep_web/templates/break/form.html.eex:36
+#: lib/rep_web/templates/break/stops.html.eex:8
 msgid "Started"
 msgstr ""
 
@@ -110,8 +109,7 @@ msgid "Station"
 msgstr ""
 
 #: lib/rep_web/templates/address/show.html.eex:12
-#: lib/rep_web/templates/break/form.html.eex:15
-#: lib/rep_web/templates/break/stops.html.eex:8
+#: lib/rep_web/templates/break/form.html.eex:30
 msgid "Stoped"
 msgstr ""
 
@@ -140,7 +138,7 @@ msgid "Oops, something went wrong! Please check the errors below."
 msgstr ""
 
 #: lib/rep_web/templates/address/form.html.eex:33
-#: lib/rep_web/templates/break/form.html.eex:39
+#: lib/rep_web/templates/break/form.html.eex:54
 #: lib/rep_web/templates/complectation/form.html.eex:39
 msgid "Submit"
 msgstr ""
@@ -190,4 +188,52 @@ msgstr ""
 
 #: lib/rep_web/router.ex:48
 msgid "Login required"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:15
+msgid "April"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:19
+msgid "August"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:23
+msgid "December"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:13
+msgid "February"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:12
+msgid "January"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:18
+msgid "July"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:17
+msgid "June"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:14
+msgid "March"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:16
+msgid "May"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:22
+msgid "November"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:21
+msgid "October"
+msgstr ""
+
+#: lib/rep_web/templates/break/form.html.eex:20
+msgid "September"
 msgstr ""
