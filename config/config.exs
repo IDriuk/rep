@@ -19,13 +19,6 @@ config :rep, RepWeb.Endpoint,
 
 config :rep, RepWeb.Gettext, default_locale: "ru_RU"
 
-config :guardian, Guardian,
-  allowed_algos: ["HS512", "HS384"],
-  issuer: "RepWeb",
-  ttl: { 30, :days },
-  serializer: RepWeb.GuardianSerializer,
-  secret_key: "lksjdlkjsdflkjsdf"
-
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
