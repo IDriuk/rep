@@ -13,6 +13,16 @@ defmodule RepWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :maybe_browser_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.VerifyHeader, realm: "Bearer"
+    plug Guardian.Plug.LoadResource
+  end
+
+  pipeline :ensure_authed_access do
+    plug Guardian.Plug.EnsureAuthenticated, %{"typ" => "access", handler: RepWeb.HttpErrorHandler}
+  end
+
   scope "/", RepWeb do
     pipe_through :browser # Use the default browser stack
 
@@ -23,7 +33,7 @@ defmodule RepWeb.Router do
   end
 
   scope "/addresses", RepWeb do
-    pipe_through [:browser, :authenticate_user]
+    pipe_through [:browser, :maybe_browser_auth, :ensure_authed_access]
 
     get "/stops", BreakController, :stops
     get "/incomplete", BreakController, :incomplete

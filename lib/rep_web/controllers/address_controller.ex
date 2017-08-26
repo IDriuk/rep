@@ -1,32 +1,13 @@
 defmodule RepWeb.AddressController do
   use RepWeb, :controller
+  use Guardian.Phoenix.Controller
 
   alias Rep.Lifts
   alias Rep.Lifts.Address
 
-  plug :require_existing_mechanic
-  plug :authorize_address when action in [:edit, :update, :delete]
-
-  defp require_existing_mechanic(conn, _) do
-    mechanic = Lifts.ensure_mechanic_exists(conn.assigns.current_user)
-    assign(conn, :current_mechanic, mechanic)
-  end
-
-  defp authorize_address(conn, _) do
-    address = Lifts.get_address!(conn.params["id"])
-
-    if conn.assigns.current_mechanic.id == address.mechanic_id do
-      assign(conn, :address, address)
-    else
-      conn
-      |> put_flash(:error, "You can't modify that address")
-      |> redirect(to: address_path(conn, :index))
-      |> halt()
-    end
-  end
-
-  def index(conn, _params) do
-    addresses = Lifts.list_addresses(conn.assigns.current_mechanic)
+  def index(conn, _params, user, _claims) do
+    mechanic = Lifts.ensure_mechanic_exists(user)
+    addresses = Lifts.list_addresses(mechanic)
     render(conn, "index.html", addresses: addresses)
   end
 

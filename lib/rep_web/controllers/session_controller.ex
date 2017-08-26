@@ -12,8 +12,7 @@ defmodule RepWeb.SessionController do
       {:ok, user} ->
         conn
         |> put_flash(:info, gettext("Welcome back!"))
-        |> put_session(:user_id, user.id)
-        |> configure_session(renew: true)
+        |> Guardian.Plug.sign_in(user)
         |> redirect(to: "/")
       {:error, :unauthorized} ->
         conn
@@ -23,8 +22,8 @@ defmodule RepWeb.SessionController do
   end
 
   def delete(conn, _) do
-    conn
-    |> configure_session(drop: true)
+    Guardian.Plug.sign_out(conn)
+    |> put_flash(:info, "Logged out successfully.")
     |> redirect(to: "/")
   end
 end
