@@ -217,5 +217,5 @@ defmodule Rep.Accounts do
       nil -> {:error, :unauthorized}
     end
   end
-  
+
 end
