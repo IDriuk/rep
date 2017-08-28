@@ -17,7 +17,7 @@ defmodule RepWeb.SessionController do
         |> redirect(to: "/")
       {:error, :unauthorized} ->
         conn
-        |> put_flash(:error, "Bad email/password combination")
+        |> put_flash(:error, gettext("Bad email/password combination"))
         |> redirect(to: session_path(conn, :new))
     end
   end

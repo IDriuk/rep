@@ -21,7 +21,7 @@ defmodule RepWeb.ComplectationController do
     case Lifts.create_complectation(address, complectation_params) do
       {:ok, _complectation} ->
         conn
-        |> put_flash(:info, "Complectation created successfully.")
+        |> put_flash(:info, gettext("Complectation created successfully."))
         |> redirect(to: address_path(conn, :show, address_id))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", address: address, changeset: changeset)
@@ -48,7 +48,7 @@ defmodule RepWeb.ComplectationController do
     case Lifts.update_complectation(complectation, complectation_params) do
       {:ok, _complectation} ->
         conn
-        |> put_flash(:info, "Complectation updated successfully.")
+        |> put_flash(:info, gettext("Complectation updated successfully."))
         |> redirect(to: address_path(conn, :show, address))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", address: address, complectation: complectation, changeset: changeset)
@@ -61,7 +61,7 @@ defmodule RepWeb.ComplectationController do
     {:ok, _complectation} = Lifts.delete_complectation(complectation)
 
     conn
-    |> put_flash(:info, "Complectation deleted successfully.")
+    |> put_flash(:info, gettext("Complectation deleted successfully."))
     |> redirect(to: address_path(conn, :show, address))
   end
 end

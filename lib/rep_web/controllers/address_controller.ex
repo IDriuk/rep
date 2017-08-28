@@ -39,7 +39,7 @@ defmodule RepWeb.AddressController do
     case Lifts.create_address(conn.assigns.current_mechanic, address_params) do
       {:ok, address} ->
         conn
-        |> put_flash(:info, "Address created successfully.")
+        |> put_flash(:info, gettext("Address created successfully."))
         |> redirect(to: address_path(conn, :show, address))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -63,7 +63,7 @@ defmodule RepWeb.AddressController do
     case Lifts.update_address(conn.assigns.address, address_params) do
       {:ok, address} ->
         conn
-        |> put_flash(:info, "Address updated successfully.")
+        |> put_flash(:info, gettext("Address updated successfully."))
         |> redirect(to: address_path(conn, :show, address))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", changeset: changeset)
@@ -74,7 +74,7 @@ defmodule RepWeb.AddressController do
     {:ok, _address} = Lifts.delete_address(conn.assigns.address)
 
     conn
-    |> put_flash(:info, "Address deleted successfully.")
+    |> put_flash(:info, gettext("Address deleted successfully."))
     |> redirect(to: address_path(conn, :index))
   end
 

@@ -237,3 +237,43 @@ msgstr ""
 #: lib/rep_web/templates/break/form.html.eex:20
 msgid "September"
 msgstr ""
+
+#: lib/rep_web/controllers/address_controller.ex:42
+msgid "Address created successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/address_controller.ex:77
+msgid "Address deleted successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/address_controller.ex:66
+msgid "Address updated successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/session_controller.ex:20
+msgid "Bad email/password combination"
+msgstr ""
+
+#: lib/rep_web/controllers/break_controller.ex:57
+msgid "Break created successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/break_controller.ex:97
+msgid "Break deleted successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/break_controller.ex:84
+msgid "Break updated successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/complectation_controller.ex:24
+msgid "Complectation created successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/complectation_controller.ex:64
+msgid "Complectation deleted successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/complectation_controller.ex:51
+msgid "Complectation updated successfully."
+msgstr ""
