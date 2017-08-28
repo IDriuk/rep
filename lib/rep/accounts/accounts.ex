@@ -206,15 +206,19 @@ defmodule Rep.Accounts do
     Credential.changeset(credential, %{})
   end
 
-  def authenticate_by_email_password(email, _password) do
+  def authenticate_by_email_password(email, password) do
     query =
       from u in User,
         inner_join: c in assoc(u, :credential),
-        where: c.email == ^email
+        where: c.email == ^email,
+        preload: [credential: c]
 
-    case Repo.one(query) do
-      %User{} = user -> {:ok, user}
-      nil -> {:error, :unauthorized}
+    user = Repo.one(query)
+
+    case  Comeonin.Pbkdf2.check_pass(user.credential, password) do
+      {:ok, credential} -> {:ok, user}
+      {:error, "no password hash found in the user struct"} -> {:error, :unauthorized}
+      {:error, "invalid password"} -> {:error, :unauthorized}
     end
   end
 
