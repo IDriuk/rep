@@ -7,6 +7,7 @@ defmodule Rep.Accounts.Credential do
     field :email, :string
     field :password, :string
     field :password_hash, :string
+    field :is_admin, :boolean, default: false
     belongs_to :user, User
 
     timestamps()
