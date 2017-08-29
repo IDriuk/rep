@@ -17,7 +17,6 @@ defmodule RepWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/users", UserController
     resources "/sessions", SessionController, only: [:new, :create, :delete],
                                               singleton: true
   end
@@ -35,6 +34,12 @@ defmodule RepWeb.Router do
 
   end
 
+  scope "/admin", RepWeb, as: :admin do
+    pipe_through [:browser, :authenticate_user, :authenticate_admin]
+
+    resources "/users", UserController
+  end
+
   scope "/cms", RepWeb.CMS, as: :cms do
     pipe_through [:browser, :authenticate_user]
 
@@ -50,6 +55,17 @@ defmodule RepWeb.Router do
         |> halt()
       user_id ->
         assign(conn, :current_user, Rep.Accounts.get_user!(user_id))
+    end
+  end
+
+  defp authenticate_admin(conn, _) do
+    case conn.assigns.current_user.credential.is_admin do
+      false ->
+        conn
+        |> Phoenix.Controller.put_flash(:error, gettext("Admin required"))
+        |> Phoenix.Controller.redirect(to: "/")
+        |> halt()
+      true -> conn
     end
   end
 
