@@ -40,12 +40,6 @@ defmodule RepWeb.Router do
     resources "/users", UserController
   end
 
-  scope "/cms", RepWeb.CMS, as: :cms do
-    pipe_through [:browser, :authenticate_user]
-
-    resources "/pages", PageController
-  end
-
   defp authenticate_user(conn, _) do
     case get_session(conn, :user_id) do
       nil ->
