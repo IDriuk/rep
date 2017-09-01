@@ -27,3 +27,9 @@
 <% end %>
   </tbody>
 </table>
+
+<%= if length(@breaks) > 0 do %>
+  <a href=<%= "/addresses/stops?offset="<> to_string(@offset + 30) %> >
+    <%= gettext("Next") %>
+  </a>
+<% end %>

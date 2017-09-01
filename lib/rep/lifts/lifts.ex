@@ -222,7 +222,8 @@ defmodule Rep.Lifts do
             inner_join: a in assoc(b, :address),
             where: a.mechanic_id == ^mechanic.id,
             where: b.stoped == :true,
-            order_by: [asc: b.started, desc: b.served]
+            order_by: [asc: b.started, desc: b.served],
+            limit: 30
     Repo.all(query) |> Repo.preload(:address)
   end
 
@@ -231,7 +232,28 @@ defmodule Rep.Lifts do
             inner_join: a in assoc(b, :address),
             where: a.mechanic_id == ^mechanic.id,
             where: b.stoped == :false,
-            order_by: [asc: b.fixed, desc: b.served]
+            order_by: [asc: b.fixed, desc: b.served],
+            limit: 30
+    Repo.all(query) |> Repo.preload(:address)
+  end
+
+  def list_breaks(:stops, %Mechanic{} = mechanic, offset) do
+    query = from b in Break,
+            inner_join: a in assoc(b, :address),
+            where: a.mechanic_id == ^mechanic.id,
+            where: b.stoped == :true,
+            order_by: [asc: b.started, desc: b.served],
+            limit: 30, offset: ^offset
+    Repo.all(query) |> Repo.preload(:address)
+  end
+
+  def list_breaks(:incomplete, %Mechanic{} = mechanic, offset) do
+    query = from b in Break,
+            inner_join: a in assoc(b, :address),
+            where: a.mechanic_id == ^mechanic.id,
+            where: b.stoped == :false,
+            order_by: [asc: b.fixed, desc: b.served],
+            limit: 30, offset: ^offset
     Repo.all(query) |> Repo.preload(:address)
   end
 

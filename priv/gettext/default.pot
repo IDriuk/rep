@@ -186,7 +186,7 @@ msgstr ""
 msgid "Welcome back!"
 msgstr ""
 
-#: lib/rep_web/router.ex:48
+#: lib/rep_web/router.ex:47
 msgid "Login required"
 msgstr ""
 
@@ -254,15 +254,15 @@ msgstr ""
 msgid "Bad email/password combination"
 msgstr ""
 
-#: lib/rep_web/controllers/break_controller.ex:57
+#: lib/rep_web/controllers/break_controller.ex:71
 msgid "Break created successfully."
 msgstr ""
 
-#: lib/rep_web/controllers/break_controller.ex:97
+#: lib/rep_web/controllers/break_controller.ex:111
 msgid "Break deleted successfully."
 msgstr ""
 
-#: lib/rep_web/controllers/break_controller.ex:84
+#: lib/rep_web/controllers/break_controller.ex:98
 msgid "Break updated successfully."
 msgstr ""
 
@@ -276,4 +276,13 @@ msgstr ""
 
 #: lib/rep_web/controllers/complectation_controller.ex:51
 msgid "Complectation updated successfully."
+msgstr ""
+
+#: lib/rep_web/router.ex:59
+msgid "Admin required"
+msgstr ""
+
+#: lib/rep_web/templates/break/incomplete.html.eex:33
+#: lib/rep_web/templates/break/stops.html.eex:33
+msgid "Next"
 msgstr ""

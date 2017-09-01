@@ -27,14 +27,28 @@ defmodule RepWeb.BreakController do
     end
   end
 
-  def stops(conn, _params) do
-    breaks = Lifts.list_breaks(:stops, conn.assigns.current_mechanic)
-    render(conn, "stops.html", breaks: breaks)
+  def stops(conn, params) do
+    case params do
+      %{"offset" => offset} ->
+        offset = String.to_integer(offset)
+        breaks = Lifts.list_breaks(:stops, conn.assigns.current_mechanic, offset)
+        render(conn, "stops.html", breaks: breaks, offset: offset)
+      _ ->
+        breaks = Lifts.list_breaks(:stops, conn.assigns.current_mechanic)
+        render(conn, "stops.html", breaks: breaks, offset: 0)
+    end
   end
 
-  def incomplete(conn, _params) do
-    breaks = Lifts.list_breaks(:incomplete, conn.assigns.current_mechanic)
-    render(conn, "incomplete.html", breaks: breaks)
+  def incomplete(conn, params) do
+    case params do
+      %{"offset" => offset} ->
+        offset = String.to_integer(offset)
+        breaks = Lifts.list_breaks(:incomplete, conn.assigns.current_mechanic, offset)
+        render(conn, "incomplete.html", breaks: breaks, offset: offset)
+      _ ->
+        breaks = Lifts.list_breaks(:incomplete, conn.assigns.current_mechanic)
+        render(conn, "incomplete.html", breaks: breaks, offset: 0)
+    end
   end
 
   def index(conn, %{"address_id" => address_id}) do
