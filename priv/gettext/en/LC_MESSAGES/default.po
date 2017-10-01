@@ -149,11 +149,11 @@ msgid "Incomplete"
 msgstr ""
 
 #: lib/rep_web/templates/layout/app.html.eex:24
-#: lib/rep_web/templates/session/new.html.eex:13
+#: lib/rep_web/templates/session/new.html.eex:16
 msgid "Login"
 msgstr ""
 
-#: lib/rep_web/templates/session/new.html.eex:19
+#: lib/rep_web/templates/session/new.html.eex:22
 msgid "Logout"
 msgstr ""
 
@@ -285,4 +285,12 @@ msgstr ""
 #: lib/rep_web/templates/break/incomplete.html.eex:33
 #: lib/rep_web/templates/break/stops.html.eex:33
 msgid "Next"
+msgstr ""
+
+#: lib/rep_web/templates/session/new.html.eex:6
+msgid "Email"
+msgstr ""
+
+#: lib/rep_web/templates/session/new.html.eex:11
+msgid "Password"
 msgstr ""

@@ -149,11 +149,11 @@ msgid "Incomplete"
 msgstr "Недоделки"
 
 #: lib/rep_web/templates/layout/app.html.eex:24
-#: lib/rep_web/templates/session/new.html.eex:13
+#: lib/rep_web/templates/session/new.html.eex:16
 msgid "Login"
 msgstr "Вход"
 
-#: lib/rep_web/templates/session/new.html.eex:19
+#: lib/rep_web/templates/session/new.html.eex:22
 msgid "Logout"
 msgstr "Выход"
 
@@ -286,3 +286,11 @@ msgstr "Требуются права администратора"
 #: lib/rep_web/templates/break/stops.html.eex:33
 msgid "Next"
 msgstr "Далее"
+
+#: lib/rep_web/templates/session/new.html.eex:6
+msgid "Email"
+msgstr "Почта"
+
+#: lib/rep_web/templates/session/new.html.eex:11
+msgid "Password"
+msgstr "Пароль"
