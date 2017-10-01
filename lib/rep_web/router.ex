@@ -26,10 +26,12 @@ defmodule RepWeb.Router do
 
     get "/stops", BreakController, :stops
     get "/incomplete", BreakController, :incomplete
+    get "/recent_orders", OrderController, :recent_orders
 
     resources "/", AddressController do
       resources "/complectations", ComplectationController
       resources "/breaks", BreakController
+      resources "/orders", OrderController
     end
 
   end

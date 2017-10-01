@@ -21,9 +21,11 @@ msgstr ""
 
 #: lib/rep_web/templates/address/index.html.eex:25
 #: lib/rep_web/templates/address/show.html.eex:31
-#: lib/rep_web/templates/address/show.html.eex:65
+#: lib/rep_web/templates/address/show.html.eex:60
+#: lib/rep_web/templates/address/show.html.eex:94
 #: lib/rep_web/templates/break/incomplete.html.eex:24
 #: lib/rep_web/templates/break/stops.html.eex:24
+#: lib/rep_web/templates/order/recent_orders.html.eex:26
 msgid "Are you sure?"
 msgstr ""
 
@@ -46,7 +48,7 @@ msgstr ""
 #: lib/rep_web/templates/address/form.html.eex:27
 #: lib/rep_web/templates/address/index.html.eex:9
 #: lib/rep_web/templates/address/show.html.eex:15
-#: lib/rep_web/templates/address/show.html.eex:47
+#: lib/rep_web/templates/address/show.html.eex:76
 #: lib/rep_web/templates/break/form.html.eex:48
 #: lib/rep_web/templates/break/incomplete.html.eex:9
 #: lib/rep_web/templates/break/stops.html.eex:9
@@ -63,6 +65,7 @@ msgstr ""
 #: lib/rep_web/templates/address/show.html.eex:1
 #: lib/rep_web/templates/break/incomplete.html.eex:7
 #: lib/rep_web/templates/break/stops.html.eex:7
+#: lib/rep_web/templates/order/recent_orders.html.eex:7
 msgid "Address"
 msgstr ""
 
@@ -70,11 +73,11 @@ msgstr ""
 msgid "Breaks"
 msgstr ""
 
-#: lib/rep_web/templates/address/show.html.eex:38
+#: lib/rep_web/templates/address/show.html.eex:67
 msgid "Complectation"
 msgstr ""
 
-#: lib/rep_web/templates/address/show.html.eex:46
+#: lib/rep_web/templates/address/show.html.eex:75
 #: lib/rep_web/templates/complectation/form.html.eex:27
 msgid "Doors"
 msgstr ""
@@ -85,7 +88,7 @@ msgstr ""
 msgid "Fixed"
 msgstr ""
 
-#: lib/rep_web/templates/address/show.html.eex:44
+#: lib/rep_web/templates/address/show.html.eex:73
 #: lib/rep_web/templates/complectation/form.html.eex:15
 msgid "Floors"
 msgstr ""
@@ -103,7 +106,7 @@ msgstr ""
 msgid "Started"
 msgstr ""
 
-#: lib/rep_web/templates/address/show.html.eex:43
+#: lib/rep_web/templates/address/show.html.eex:72
 #: lib/rep_web/templates/complectation/form.html.eex:9
 msgid "Station"
 msgstr ""
@@ -113,7 +116,7 @@ msgstr ""
 msgid "Stoped"
 msgstr ""
 
-#: lib/rep_web/templates/address/show.html.eex:45
+#: lib/rep_web/templates/address/show.html.eex:74
 #: lib/rep_web/templates/complectation/form.html.eex:21
 msgid "Underfloor"
 msgstr ""
@@ -124,6 +127,8 @@ msgstr ""
 #: lib/rep_web/templates/break/new.html.eex:5
 #: lib/rep_web/templates/complectation/edit.html.eex:5
 #: lib/rep_web/templates/complectation/new.html.eex:5
+#: lib/rep_web/templates/order/edit.html.eex:5
+#: lib/rep_web/templates/order/new.html.eex:5
 msgid "Cancel"
 msgstr ""
 
@@ -134,12 +139,14 @@ msgstr ""
 #: lib/rep_web/templates/address/form.html.eex:4
 #: lib/rep_web/templates/break/form.html.eex:4
 #: lib/rep_web/templates/complectation/form.html.eex:4
+#: lib/rep_web/templates/order/form.html.eex:4
 msgid "Oops, something went wrong! Please check the errors below."
 msgstr ""
 
 #: lib/rep_web/templates/address/form.html.eex:33
 #: lib/rep_web/templates/break/form.html.eex:54
 #: lib/rep_web/templates/complectation/form.html.eex:39
+#: lib/rep_web/templates/order/form.html.eex:48
 msgid "Submit"
 msgstr ""
 
@@ -148,7 +155,7 @@ msgstr ""
 msgid "Incomplete"
 msgstr ""
 
-#: lib/rep_web/templates/layout/app.html.eex:24
+#: lib/rep_web/templates/layout/app.html.eex:25
 #: lib/rep_web/templates/session/new.html.eex:16
 msgid "Login"
 msgstr ""
@@ -186,55 +193,67 @@ msgstr ""
 msgid "Welcome back!"
 msgstr ""
 
-#: lib/rep_web/router.ex:47
+#: lib/rep_web/router.ex:49
 msgid "Login required"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:15
+#: lib/rep_web/templates/order/form.html.eex:15
 msgid "April"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:19
+#: lib/rep_web/templates/order/form.html.eex:19
 msgid "August"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:23
+#: lib/rep_web/templates/order/form.html.eex:23
 msgid "December"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:13
+#: lib/rep_web/templates/order/form.html.eex:13
 msgid "February"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:12
+#: lib/rep_web/templates/order/form.html.eex:12
 msgid "January"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:18
+#: lib/rep_web/templates/order/form.html.eex:18
 msgid "July"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:17
+#: lib/rep_web/templates/order/form.html.eex:17
 msgid "June"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:14
+#: lib/rep_web/templates/order/form.html.eex:14
 msgid "March"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:16
+#: lib/rep_web/templates/order/form.html.eex:16
 msgid "May"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:22
+#: lib/rep_web/templates/order/form.html.eex:22
 msgid "November"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:21
+#: lib/rep_web/templates/order/form.html.eex:21
 msgid "October"
 msgstr ""
 
 #: lib/rep_web/templates/break/form.html.eex:20
+#: lib/rep_web/templates/order/form.html.eex:20
 msgid "September"
 msgstr ""
 
@@ -242,11 +261,11 @@ msgstr ""
 msgid "Address created successfully."
 msgstr ""
 
-#: lib/rep_web/controllers/address_controller.ex:77
+#: lib/rep_web/controllers/address_controller.ex:78
 msgid "Address deleted successfully."
 msgstr ""
 
-#: lib/rep_web/controllers/address_controller.ex:66
+#: lib/rep_web/controllers/address_controller.ex:67
 msgid "Address updated successfully."
 msgstr ""
 
@@ -278,12 +297,13 @@ msgstr ""
 msgid "Complectation updated successfully."
 msgstr ""
 
-#: lib/rep_web/router.ex:59
+#: lib/rep_web/router.ex:61
 msgid "Admin required"
 msgstr ""
 
 #: lib/rep_web/templates/break/incomplete.html.eex:33
 #: lib/rep_web/templates/break/stops.html.eex:33
+#: lib/rep_web/templates/order/recent_orders.html.eex:35
 msgid "Next"
 msgstr ""
 
@@ -297,4 +317,57 @@ msgstr ""
 
 #: lib/rep_web/templates/layout/app.html.eex:10
 msgid "Lifts"
+msgstr ""
+
+#: lib/rep_web/templates/order/edit.html.eex:1
+msgid "Edit Order"
+msgstr ""
+
+#: lib/rep_web/templates/order/new.html.eex:1
+msgid "New Order"
+msgstr ""
+
+#: lib/rep_web/templates/address/show.html.eex:43
+#: lib/rep_web/templates/order/form.html.eex:30
+#: lib/rep_web/templates/order/recent_orders.html.eex:8
+msgid "Ordered"
+msgstr ""
+
+#: lib/rep_web/templates/address/show.html.eex:38
+#: lib/rep_web/templates/layout/app.html.eex:24
+msgid "Orders"
+msgstr ""
+
+#: lib/rep_web/templates/address/show.html.eex:44
+#: lib/rep_web/templates/order/form.html.eex:36
+#: lib/rep_web/templates/order/recent_orders.html.eex:9
+msgid "Received"
+msgstr ""
+
+#: lib/rep_web/templates/order/recent_orders.html.eex:1
+msgid "Recent orders"
+msgstr ""
+
+#: lib/rep_web/templates/address/show.html.eex:42
+#: lib/rep_web/templates/order/form.html.eex:9
+#: lib/rep_web/templates/order/recent_orders.html.eex:6
+msgid "Sended"
+msgstr ""
+
+#: lib/rep_web/templates/address/show.html.eex:45
+#: lib/rep_web/templates/order/form.html.eex:42
+#: lib/rep_web/templates/order/recent_orders.html.eex:10
+msgid "Used"
+msgstr ""
+
+#: lib/rep_web/controllers/order_controller.ex:59
+msgid "order created successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/order_controller.ex:98
+msgid "order deleted successfully."
+msgstr ""
+
+#: lib/rep_web/controllers/order_controller.ex:86
+msgid "order updated successfully."
 msgstr ""

@@ -21,9 +21,11 @@ msgstr "Адреса"
 
 #: lib/rep_web/templates/address/index.html.eex:25
 #: lib/rep_web/templates/address/show.html.eex:31
-#: lib/rep_web/templates/address/show.html.eex:65
+#: lib/rep_web/templates/address/show.html.eex:60
+#: lib/rep_web/templates/address/show.html.eex:94
 #: lib/rep_web/templates/break/incomplete.html.eex:24
 #: lib/rep_web/templates/break/stops.html.eex:24
+#: lib/rep_web/templates/order/recent_orders.html.eex:26
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
@@ -46,7 +48,7 @@ msgstr "Новый адрес"
 #: lib/rep_web/templates/address/form.html.eex:27
 #: lib/rep_web/templates/address/index.html.eex:9
 #: lib/rep_web/templates/address/show.html.eex:15
-#: lib/rep_web/templates/address/show.html.eex:47
+#: lib/rep_web/templates/address/show.html.eex:76
 #: lib/rep_web/templates/break/form.html.eex:48
 #: lib/rep_web/templates/break/incomplete.html.eex:9
 #: lib/rep_web/templates/break/stops.html.eex:9
@@ -63,6 +65,7 @@ msgstr "Улица"
 #: lib/rep_web/templates/address/show.html.eex:1
 #: lib/rep_web/templates/break/incomplete.html.eex:7
 #: lib/rep_web/templates/break/stops.html.eex:7
+#: lib/rep_web/templates/order/recent_orders.html.eex:7
 msgid "Address"
 msgstr "Адрес"
 
@@ -70,11 +73,11 @@ msgstr "Адрес"
 msgid "Breaks"
 msgstr "Поломки"
 
-#: lib/rep_web/templates/address/show.html.eex:38
+#: lib/rep_web/templates/address/show.html.eex:67
 msgid "Complectation"
 msgstr "Комплектация"
 
-#: lib/rep_web/templates/address/show.html.eex:46
+#: lib/rep_web/templates/address/show.html.eex:75
 #: lib/rep_web/templates/complectation/form.html.eex:27
 msgid "Doors"
 msgstr "Двери"
@@ -85,7 +88,7 @@ msgstr "Двери"
 msgid "Fixed"
 msgstr "Справлено"
 
-#: lib/rep_web/templates/address/show.html.eex:44
+#: lib/rep_web/templates/address/show.html.eex:73
 #: lib/rep_web/templates/complectation/form.html.eex:15
 msgid "Floors"
 msgstr "Этажи"
@@ -103,7 +106,7 @@ msgstr "Обслуж."
 msgid "Started"
 msgstr "Пущен"
 
-#: lib/rep_web/templates/address/show.html.eex:43
+#: lib/rep_web/templates/address/show.html.eex:72
 #: lib/rep_web/templates/complectation/form.html.eex:9
 msgid "Station"
 msgstr "Станция"
@@ -113,7 +116,7 @@ msgstr "Станция"
 msgid "Stoped"
 msgstr "Став"
 
-#: lib/rep_web/templates/address/show.html.eex:45
+#: lib/rep_web/templates/address/show.html.eex:74
 #: lib/rep_web/templates/complectation/form.html.eex:21
 msgid "Underfloor"
 msgstr "Подпольник"
@@ -124,6 +127,8 @@ msgstr "Подпольник"
 #: lib/rep_web/templates/break/new.html.eex:5
 #: lib/rep_web/templates/complectation/edit.html.eex:5
 #: lib/rep_web/templates/complectation/new.html.eex:5
+#: lib/rep_web/templates/order/edit.html.eex:5
+#: lib/rep_web/templates/order/new.html.eex:5
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -134,12 +139,14 @@ msgstr "Редактировать адрес"
 #: lib/rep_web/templates/address/form.html.eex:4
 #: lib/rep_web/templates/break/form.html.eex:4
 #: lib/rep_web/templates/complectation/form.html.eex:4
+#: lib/rep_web/templates/order/form.html.eex:4
 msgid "Oops, something went wrong! Please check the errors below."
 msgstr "Упс, что-то пошло не так! Проверьте ошибки."
 
 #: lib/rep_web/templates/address/form.html.eex:33
 #: lib/rep_web/templates/break/form.html.eex:54
 #: lib/rep_web/templates/complectation/form.html.eex:39
+#: lib/rep_web/templates/order/form.html.eex:48
 msgid "Submit"
 msgstr "Подтвердить"
 
@@ -148,7 +155,7 @@ msgstr "Подтвердить"
 msgid "Incomplete"
 msgstr "Недоделки"
 
-#: lib/rep_web/templates/layout/app.html.eex:24
+#: lib/rep_web/templates/layout/app.html.eex:25
 #: lib/rep_web/templates/session/new.html.eex:16
 msgid "Login"
 msgstr "Вход"
@@ -186,55 +193,67 @@ msgstr "Новая комплектация"
 msgid "Welcome back!"
 msgstr "С возвращением!"
 
-#: lib/rep_web/router.ex:47
+#: lib/rep_web/router.ex:49
 msgid "Login required"
 msgstr "Требуется регистрация"
 
 #: lib/rep_web/templates/break/form.html.eex:15
+#: lib/rep_web/templates/order/form.html.eex:15
 msgid "April"
 msgstr "апрель"
 
 #: lib/rep_web/templates/break/form.html.eex:19
+#: lib/rep_web/templates/order/form.html.eex:19
 msgid "August"
 msgstr "август"
 
 #: lib/rep_web/templates/break/form.html.eex:23
+#: lib/rep_web/templates/order/form.html.eex:23
 msgid "December"
 msgstr "декабрь"
 
 #: lib/rep_web/templates/break/form.html.eex:13
+#: lib/rep_web/templates/order/form.html.eex:13
 msgid "February"
 msgstr "февраль"
 
 #: lib/rep_web/templates/break/form.html.eex:12
+#: lib/rep_web/templates/order/form.html.eex:12
 msgid "January"
 msgstr "январь"
 
 #: lib/rep_web/templates/break/form.html.eex:18
+#: lib/rep_web/templates/order/form.html.eex:18
 msgid "July"
 msgstr "июль"
 
 #: lib/rep_web/templates/break/form.html.eex:17
+#: lib/rep_web/templates/order/form.html.eex:17
 msgid "June"
 msgstr "июнь"
 
 #: lib/rep_web/templates/break/form.html.eex:14
+#: lib/rep_web/templates/order/form.html.eex:14
 msgid "March"
 msgstr "март"
 
 #: lib/rep_web/templates/break/form.html.eex:16
+#: lib/rep_web/templates/order/form.html.eex:16
 msgid "May"
 msgstr "май"
 
 #: lib/rep_web/templates/break/form.html.eex:22
+#: lib/rep_web/templates/order/form.html.eex:22
 msgid "November"
 msgstr "ноябрь"
 
 #: lib/rep_web/templates/break/form.html.eex:21
+#: lib/rep_web/templates/order/form.html.eex:21
 msgid "October"
 msgstr "октябрь"
 
 #: lib/rep_web/templates/break/form.html.eex:20
+#: lib/rep_web/templates/order/form.html.eex:20
 msgid "September"
 msgstr "сентябрь"
 
@@ -242,11 +261,11 @@ msgstr "сентябрь"
 msgid "Address created successfully."
 msgstr "Адрес успешно создан"
 
-#: lib/rep_web/controllers/address_controller.ex:77
+#: lib/rep_web/controllers/address_controller.ex:78
 msgid "Address deleted successfully."
 msgstr "Адрес успешно удален"
 
-#: lib/rep_web/controllers/address_controller.ex:66
+#: lib/rep_web/controllers/address_controller.ex:67
 msgid "Address updated successfully."
 msgstr "Адрес успешно обновлен"
 
@@ -278,12 +297,13 @@ msgstr "Комплектация успешно удалена"
 msgid "Complectation updated successfully."
 msgstr "Комплектация успешно обновлена"
 
-#: lib/rep_web/router.ex:59
+#: lib/rep_web/router.ex:61
 msgid "Admin required"
 msgstr "Требуются права администратора"
 
 #: lib/rep_web/templates/break/incomplete.html.eex:33
 #: lib/rep_web/templates/break/stops.html.eex:33
+#: lib/rep_web/templates/order/recent_orders.html.eex:35
 msgid "Next"
 msgstr "Далее"
 
@@ -298,3 +318,56 @@ msgstr "Пароль"
 #: lib/rep_web/templates/layout/app.html.eex:10
 msgid "Lifts"
 msgstr "Лифты"
+
+#: lib/rep_web/templates/order/edit.html.eex:1
+msgid "Edit Order"
+msgstr "Редактировать заказ"
+
+#: lib/rep_web/templates/order/new.html.eex:1
+msgid "New Order"
+msgstr "Новый заказ"
+
+#: lib/rep_web/templates/address/show.html.eex:43
+#: lib/rep_web/templates/order/form.html.eex:30
+#: lib/rep_web/templates/order/recent_orders.html.eex:8
+msgid "Ordered"
+msgstr "Заказано"
+
+#: lib/rep_web/templates/address/show.html.eex:38
+#: lib/rep_web/templates/layout/app.html.eex:24
+msgid "Orders"
+msgstr "Заказы"
+
+#: lib/rep_web/templates/address/show.html.eex:44
+#: lib/rep_web/templates/order/form.html.eex:36
+#: lib/rep_web/templates/order/recent_orders.html.eex:9
+msgid "Received"
+msgstr "Получено"
+
+#: lib/rep_web/templates/order/recent_orders.html.eex:1
+msgid "Recent orders"
+msgstr "Недавние заказы"
+
+#: lib/rep_web/templates/address/show.html.eex:42
+#: lib/rep_web/templates/order/form.html.eex:9
+#: lib/rep_web/templates/order/recent_orders.html.eex:6
+msgid "Sended"
+msgstr "Послано"
+
+#: lib/rep_web/templates/address/show.html.eex:45
+#: lib/rep_web/templates/order/form.html.eex:42
+#: lib/rep_web/templates/order/recent_orders.html.eex:10
+msgid "Used"
+msgstr "Использовано"
+
+#: lib/rep_web/controllers/order_controller.ex:59
+msgid "order created successfully."
+msgstr "заказ успешно создан"
+
+#: lib/rep_web/controllers/order_controller.ex:98
+msgid "order deleted successfully."
+msgstr "заказ успешно удален"
+
+#: lib/rep_web/controllers/order_controller.ex:86
+msgid "order updated successfully."
+msgstr "заказ успешно обновлен"

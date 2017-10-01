@@ -1,0 +1,5 @@
+<h2><%= gettext "New Order" %></h2>
+
+<%= render "form.html", Map.put(assigns, :action, address_order_path(@conn, :create, @address.id)) %>
+
+<span><%= link gettext("Cancel"), to: address_path(@conn, :show, @address) %></span>

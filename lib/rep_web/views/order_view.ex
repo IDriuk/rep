@@ -1,4 +1,4 @@
-defmodule RepWeb.BreakView do
+defmodule RepWeb.OrderView do
   use RepWeb, :view
 
   alias Rep.Lifts.Address

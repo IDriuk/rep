@@ -1,0 +1,50 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p><%= gettext "Oops, something went wrong! Please check the errors below." %></p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, gettext("Sended"), class: "control-label" %>
+    <%= date_select f, :sended,
+      year: [options: 2016..2020],
+      month: [options: [[key: gettext("January"), value: 1],
+                        [key: gettext("February"), value: 2],
+                        [key: gettext("March"), value: 3],
+                        [key: gettext("April"), value: 4],
+                        [key: gettext("May"), value: 5],
+                        [key: gettext("June"), value: 6],
+                        [key: gettext("July"), value: 7],
+                        [key: gettext("August"), value: 8],
+                        [key: gettext("September"), value: 9],
+                        [key: gettext("October"), value: 10],
+                        [key: gettext("November"), value: 11],
+                        [key: gettext("December"), value: 12]]], builder: fn b -> %>
+      <%= b.(:day, []) %> / <%= b.(:month, []) %> / <%= b.(:year, []) %>
+    <% end %>
+    <%= error_tag f, :sended %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, gettext("Ordered"), class: "control-label" %>
+    <%= textarea f, :ordered, class: "form-control" %>
+    <%= error_tag f, :ordered %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, gettext("Received"), class: "control-label" %>
+    <%= textarea f, :received, class: "form-control" %>
+    <%= error_tag f, :received %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, gettext("Used"), class: "control-label" %>
+    <%= textarea f, :used, class: "form-control" %>
+    <%= error_tag f, :used %>
+  </div>
+
+  <div class="form-group">
+    <%= submit gettext("Submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,7 +1,7 @@
 defmodule Rep.Lifts.Address do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Rep.Lifts.{Address, Mechanic, Break, Complectation}
+  alias Rep.Lifts.{Address, Mechanic, Break, Order, Complectation}
 
   schema "addresses" do
     field :entrance, :string
@@ -11,6 +11,7 @@ defmodule Rep.Lifts.Address do
 
     has_one :complectations, Complectation
     has_many :breaks, Break
+    has_many :orders, Order
     belongs_to :mechanic, Mechanic
 
     timestamps()

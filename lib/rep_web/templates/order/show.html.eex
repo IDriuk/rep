@@ -1,0 +1,28 @@
+<h2>Show Order</h2>
+
+<ul class="list--none">
+
+  <li>
+    <strong>Sended:</strong>
+    <%= @order.sended %>
+  </li>
+
+  <li>
+    <strong>Ordered:</strong>
+    <%= @order.ordered %>
+  </li>
+
+  <li>
+    <strong>Received:</strong>
+    <%= @order.received %>
+  </li>
+
+  <li>
+    <strong>Used:</strong>
+    <%= @order.used %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: address_order_path(@conn, :edit, @address.id, @order) %></span>
+<span><%= link "Back", to: address_order_path(@conn, :index, @address.id) %></span>

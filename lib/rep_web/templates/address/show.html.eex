@@ -35,6 +35,35 @@
   </tbody>
 </table>
 
+<h4><%= gettext "Orders" %></h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= gettext "Sended" %></th>
+      <th><%= gettext "Ordered" %></th>
+      <th><%= gettext "Received" %></th>
+      <th><%= gettext "Used" %></th>
+
+      <th><%= link " ", to: address_order_path(@conn, :new, @address.id), class: "pull-right btn btn-default btn-xs glyphicon glyphicon-plus" %></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for order <- @orders do %>
+    <tr>
+      <td><%= to_date order.sended %></td>
+      <td><%= order.ordered %></td>
+      <td><%= order.received %></td>
+      <td><%= order.used %></td>
+
+      <td class="text-right buttons-right">
+        <span><%= link "", to: address_order_path(@conn, :edit, @address.id, order), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
+        <span><%= link " ", to: address_order_path(@conn, :delete, @address.id, order), method: :delete, data: [confirm: gettext("Are you sure?")], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
 <h4><%= gettext "Complectation" %></h4>
 
 <table class="table">

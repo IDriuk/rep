@@ -1,0 +1,33 @@
+<h2>Listing Orders</h2>
+<h3> <%= link get_short_address(@address), to: address_path(@conn, :show, @address) %></h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Sended</th>
+      <th>Ordered</th>
+      <th>Received</th>
+      <th>Used</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for order <- @orders do %>
+    <tr>
+      <td><%= to_date order.sended %></td>
+      <td><%= order.ordered %></td>
+      <td><%= order.received %></td>
+      <td><%= order.used %></td>
+
+      <td class="text-right buttons-right">
+        <span><%= link " ", to: address_order_path(@conn, :show, @address.id, order), class: "btn btn-default btn-xs glyphicon glyphicon-eye-open" %></span>
+        <span><%= link "", to: address_order_path(@conn, :edit, @address.id, order), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
+        <span><%= link " ", to: address_order_path(@conn, :delete, @address.id, order), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Order", to: address_order_path(@conn, :new, @address.id) %></span>

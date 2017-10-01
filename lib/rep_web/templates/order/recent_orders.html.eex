@@ -1,0 +1,37 @@
+<h2><%= gettext "Recent orders" %></h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= gettext "Sended" %></th>
+      <th><%= gettext "Address" %></th>
+      <th><%= gettext "Ordered" %></th>
+      <th><%= gettext "Received" %></th>
+      <th><%= gettext "Used" %></th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for order <- @orders do %>
+    <tr>
+      <td><%= to_date order.sended %></td>
+      <td><%= link get_short_address(order.address), to: address_path(@conn, :show, order.address) %></td>
+      <td><%= order.ordered %></td>
+      <td><%= order.received %></td>
+      <td><%= order.used %></td>
+
+      <td class="text-right buttons-right">
+        <span><%= link "", to: address_order_path(@conn, :edit, order.address.id, order), class: "btn btn-default btn-xs glyphicon glyphicon-pencil" %></span>
+        <span><%= link " ", to: address_order_path(@conn, :delete, order.address.id, order), method: :delete, data: [confirm: gettext("Are you sure?")], class: "btn btn-danger btn-xs glyphicon glyphicon-remove" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= if length(@orders) > 0 do %>
+  <a href=<%= "/addresses/recent_orders?offset="<> to_string(@offset + 30) %> >
+    <%= gettext("Next") %>
+  </a>
+<% end %>
