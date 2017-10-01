@@ -294,3 +294,7 @@ msgstr "Почта"
 #: lib/rep_web/templates/session/new.html.eex:11
 msgid "Password"
 msgstr "Пароль"
+
+#: lib/rep_web/templates/layout/app.html.eex:10
+msgid "Lifts"
+msgstr "Лифты"
