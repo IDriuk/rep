@@ -7,8 +7,7 @@ defmodule Rep.Repo.Migrations.CreateOrders do
       add :ordered, :text
       add :received, :text
       add :used, :text
-      add :address_id, references(:addresses, on_delete: :nothing)
-
+      add :address_id, references(:addresses, on_delete: :delete_all), null: false
       timestamps()
     end
 
