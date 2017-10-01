@@ -215,11 +215,17 @@ defmodule Rep.Accounts do
 
     user = Repo.one(query)
 
-    case  Comeonin.Pbkdf2.check_pass(user.credential, password) do
-      {:ok, _credential} -> {:ok, user}
-      {:error, "no password hash found in the user struct"} -> {:error, :unauthorized}
-      {:error, "invalid password"} -> {:error, :unauthorized}
+    case user do
+      %{credential: credential} ->
+        case  Comeonin.Pbkdf2.check_pass(credential, password) do
+          {:ok, _credential} -> {:ok, user}
+          {:error, "no password hash found in the user struct"} -> {:error, :unauthorized}
+          {:error, "invalid password"} -> {:error, :unauthorized}
+        end
+      _ ->
+        {:error, :unauthorized}
     end
+
   end
 
 end

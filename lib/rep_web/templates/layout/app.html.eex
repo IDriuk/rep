@@ -22,7 +22,7 @@
             <li><%= link gettext("Stops"), to: break_path(@conn, :stops) %></li>
             <li><%= link gettext("Incomplete"), to: break_path(@conn, :incomplete) %></li>
             <li><%= link gettext("Orders"), to: order_path(@conn, :recent_orders) %></li>
-            <li><%= link gettext("Login"), to: session_path(@conn, :new) %></li>
+            <li><%= link gettext("Logout"), to: session_path(@conn, :delete), method: :delete  %></li>
           </ul>
         </nav>
       </header>
