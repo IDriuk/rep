@@ -8,3 +8,12 @@
 .buttons-right {
   width: 15rem;
 }
+
+@media screen and (max-width: 500px) {
+  .header {
+    min-height: 22rem ;
+  }
+  ul.nav {
+    padding-right: 12rem;
+  }
+}
