@@ -19,6 +19,6 @@ defmodule Rep.Lifts.Order do
   def changeset(%Order{} = order, attrs) do
     order
     |> cast(attrs, [:sended, :ordered, :received, :used])
-    |> validate_required([:sended, :ordered])
+    |> validate_required([:sended])
   end
 end
